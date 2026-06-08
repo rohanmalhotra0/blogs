@@ -1,0 +1,433 @@
+// IBM Internship Progress Tracker Data
+// This file contains all weekly progress data for Rohan and Calvin
+// To update: Add content to the appropriate week object
+
+const internshipData = {
+  metadata: {
+    title: "IBM Internship Progress Tracker",
+    subtitle: "Weekly progress, deliverables, learning, and project work across the 9-week internship",
+    description: "This tracker documents Calvin and Rohan's weekly progress, accomplishments, and learning throughout their IBM internship.",
+    totalWeeks: 9,
+    workstreams: [
+      "Onboarding and IBM Learn",
+      "Oracle EPM / Oracle My Learn",
+      "DRW AMS",
+      "MCW Implementation",
+      "Digital Product Engineering",
+      "Boston Dynamics Spot",
+      "Capstone Project",
+      "Intern10 Deliverables"
+    ]
+  },
+
+  people: [
+    {
+      id: "rohan",
+      name: "Rohan",
+      role: "IBM Intern | Oracle EPM | Digital Product Engineering",
+      totalMetrics: {
+        learningHours: 57,
+        modulesCompleted: 186,
+        badgesEarned: 8,
+        projectsActive: 5
+      },
+      weeks: [
+        {
+          week: 1,
+          title: "Onboarding, Self-Learning, Networking, and Initial Interviews",
+          status: "completed",
+          tags: ["Onboarding", "IBM Learn", "Intern10", "Networking"],
+          mainFocus: "Rohan focused on completing onboarding, finishing IBM learning, attending meetings and trainings, and completing Intern10 networking interviews.",
+
+          accomplishments: [
+            "Finished all onboarding requirements",
+            "Took manager's advice to learn independently",
+            "Spent the weekend going through IBM Learn",
+            "Completed 57 total hours of learning",
+            "Completed 186 modules total",
+            "Earned 5 badges and certifications",
+            "Attended all meetings and trainings",
+            "Met with buddy, PM, and manager",
+            "Finished all networking interviews for Intern10",
+            "Met with Neil Kaufman for interview",
+            "Met with Karla McMillan for interview",
+            "Met with Summer Gerhart for interview"
+          ],
+
+          meetings: [
+            { name: "Buddy", purpose: "Onboarding support" },
+            { name: "Project Manager", purpose: "Project overview" },
+            { name: "Manager", purpose: "Check-in and guidance" },
+            { name: "Neil Kaufman", purpose: "Networking interview" },
+            { name: "Karla McMillan", purpose: "Networking interview" },
+            { name: "Summer Gerhart", purpose: "Networking interview" }
+          ],
+
+          training: [
+            "All onboarding modules",
+            "Additional IBM Learn modules beyond minimum requirements",
+            "IBM internal learning platforms",
+            "Self-paced training resources"
+          ],
+
+          projectWork: [
+            "Started understanding IBM Consulting structure",
+            "Began learning Oracle EPM basics",
+            "Started organizing Intern10 documentation"
+          ],
+
+          technicalWork: [],
+
+          deliverables: [
+            "Completed all Intern10 networking interviews",
+            "Organized notes from interviews",
+            "Started weekly progress documentation"
+          ],
+
+          metrics: {
+            learningHours: 57,
+            modulesCompleted: 186,
+            badges: 5,
+            meetingsAttended: 6
+          },
+
+          managerSummary: "During Week 1, Rohan completed onboarding and went beyond the required learning by spending additional time on IBM Learn. He completed 57 hours of learning, 186 modules, and earned 5 badges/certifications. He also completed Intern10 networking interviews and met with his buddy, PM, manager, and IBM professionals including Neil Kaufman, Karla McMillan, and Summer Gerhart.",
+
+          reflection: "Week 1 was focused on building a strong base for the internship. I completed all onboarding requirements, but I also went beyond the required work by completing many IBM Learn modules on my own. Meeting with my buddy, PM, manager, and interview contacts helped me better understand how IBM Consulting is structured and how I should approach the internship. This week helped me build momentum and gave me a clearer sense of the learning, networking, and project expectations ahead.",
+
+          assets: [
+            // Assets will be loaded dynamically from Rohan/Assets Week 1 folder
+          ]
+        },
+
+        {
+          week: 2,
+          title: "Oracle Training, DRW AMS, MCW Implementation, Spot, and Capstone Leadership",
+          status: "completed",
+          tags: ["Oracle", "DRW AMS", "MCW", "Boston Dynamics", "Capstone", "Intern10"],
+          mainFocus: "Rohan moved from onboarding into active project work. He started Intern10 project documentation, completed Oracle and IBM training, joined DRW AMS and MCW Implementation workstreams, began Boston Dynamics Spot ML work, and took a leadership role on the capstone project.",
+
+          accomplishments: [
+            "Met with buddy, PM, and manager",
+            "Started project work for Intern10 and began documenting tasks",
+            "Finished all Oracle training",
+            "Earned 3 Oracle My Learn badges",
+            "Finished all IBM trainings, including self-paced training",
+            "Recorded 47 total hours for IBM Think",
+            "Started DRW AMS onboarding",
+            "Started MCW Implementation onboarding",
+            "Finished EPM elevator pitch",
+            "Finished EPM meeting presentation",
+            "Finished All Hands review",
+            "Finished Intern10 modules for client call shadowing",
+            "Finished client call shadowing notes",
+            "Finished client call task shadowing notes",
+            "Finished exposure to a design notes",
+            "Set up VS Code environment",
+            "Labeled 898 images to train Spot on the dog toy",
+            "Set up a GitHub repo for version control on Spot ML training",
+            "Took main leadership role for capstone project"
+          ],
+
+          meetings: [
+            { name: "Buddy, PM, Manager", purpose: "Regular check-ins" },
+            { name: "DRW AMS Team", purpose: "Project onboarding" },
+            { name: "DRW PM", purpose: "Project overview" },
+            { name: "MCW Team", purpose: "Implementation onboarding" },
+            { name: "Rahul and Calvin", purpose: "Recording task and presentation" },
+            { name: "Parker (Calvin's mentor)", purpose: "Q&A session on MCW process" },
+            { name: "Summer and Tono", purpose: "Spot onboarding" },
+            { name: "Tono Nogueras", purpose: "Interview" }
+          ],
+
+          training: [
+            "All Oracle training modules",
+            "IBM self-paced training (47 hours for IBM Think)",
+            "Oracle ERP and EPM concepts",
+            "LabelImg for image annotation",
+            "YOLO concepts for computer vision",
+            "Boston Dynamics Spot capabilities",
+            "IBM Digital Product Engineering module"
+          ],
+
+          projectWork: [
+            {
+              name: "DRW AMS",
+              tasks: [
+                "Met with DRW AMS team for onboarding",
+                "Self-learning about DRW and Oracle ERP/EPM usage",
+                "Assigned Intern10 tasks",
+                "Continued task documentation"
+              ]
+            },
+            {
+              name: "MCW Implementation",
+              tasks: [
+                "Worked with Calvin to create notes on MCW process",
+                "Created questions about the process",
+                "Built flow chart of total process",
+                "Documented vocabulary terms",
+                "Organized work into PDF",
+                "Met with Parker to clarify questions"
+              ]
+            },
+            {
+              name: "Boston Dynamics Spot",
+              tasks: [
+                "Set up VS Code environment",
+                "Labeled 898 images",
+                "Set up GitHub repo for version control",
+                "Learned LabelImg and YOLO"
+              ]
+            },
+            {
+              name: "Capstone",
+              tasks: [
+                "Took main leadership role",
+                "Came up with capstone idea",
+                "Led team meeting discussion",
+                "Created action items for each consultant",
+                "Explained technical terms to team",
+                "Started demo work with Calvin",
+                "Created shared documentation"
+              ]
+            }
+          ],
+
+          technicalWork: [
+            "VS Code environment setup",
+            "GitHub repository setup and version control",
+            "Image labeling with LabelImg (898 images)",
+            "Computer vision dataset preparation",
+            "YOLO object detection research"
+          ],
+
+          deliverables: [
+            "EPM elevator pitch",
+            "EPM meeting presentation",
+            "All Hands review",
+            "Client call shadowing notes",
+            "Client call task shadowing notes",
+            "Exposure to design notes",
+            "MCW process notes and flow chart (PDF)",
+            "Capstone project documentation"
+          ],
+
+          metrics: {
+            learningHours: 47,
+            badges: 3,
+            imagesLabeled: 898,
+            meetingsAttended: 8,
+            projectsJoined: 3
+          },
+
+          managerSummary: "During Week 2, Rohan began contributing across several workstreams. He completed Oracle training, earned 3 Oracle badges, and finished IBM self-paced training. He joined DRW AMS and MCW Implementation onboarding, completed multiple Intern10 deliverables, and began Digital Product Engineering work with Boston Dynamics Spot. He labeled 898 images for computer vision training, set up a GitHub repo, and took a leadership role in the capstone project.",
+
+          reflection: "Week 2 was a major step forward because I moved from onboarding into real project exposure. I completed Oracle and IBM training, joined DRW and MCW project work, started Boston Dynamics Spot development, and took leadership on the capstone. I also began documenting my work more carefully for Intern10. This week helped me see how my internship connects across multiple areas: Oracle EPM, managed services, implementation work, Digital Product Engineering, robotics, machine learning, and consulting leadership.",
+
+          assets: []
+        },
+
+        {
+          week: 3,
+          title: "YOLO Model Training, DRW Shadowing, MCW Meetings, and Capstone MVP",
+          status: "completed",
+          tags: ["YOLO", "ML Training", "DRW AMS", "MCW", "Capstone", "RAG"],
+          mainFocus: "Rohan continued training and moved deeper into technical and project execution. He trained a YOLO model, documented the Spot ML repo, shadowed DRW meetings, joined MCW standups, and built the first version of the capstone demo.",
+
+          accomplishments: [
+            "Continued completing Oracle and IBM training modules",
+            "Trained a YOLO ML model based on LabelImg XML data",
+            "Organized the GitHub repo",
+            "Created documentation on how to use the data",
+            "Added fine-tuning for the ML model",
+            "Started documenting different error rates",
+            "Met with Summer and Tono two times",
+            "Shadowed DRW meetings",
+            "Met with PM John",
+            "Presented EPM elevator pitch for Intern10 to PM John",
+            "Presented meeting presentation for Intern10 to PM John",
+            "Recorded feedback and learning",
+            "Took notes on meetings and summarized action steps",
+            "Continued learning about DRW and ticket management",
+            "Joined all MCW daily standups and all-hands meetings",
+            "Continued reviewing accounting terms",
+            "Wrote out architecture for RAG implementation with ICA",
+            "Started building demo RAG/skills for ICA",
+            "Researched Google tokenization for RAG",
+            "Created a GitHub repo for the capstone",
+            "Created protocol for merging code",
+            "Created Obsidian-like RAG and consistent documentation",
+            "Started work on presentation",
+            "Coded an MVP of the demo"
+          ],
+
+          meetings: [
+            { name: "Summer and Tono", purpose: "Spot progress review (2 meetings)" },
+            { name: "PM John", purpose: "DRW AMS check-in" },
+            { name: "PM John", purpose: "Intern10 elevator pitch presentation" },
+            { name: "PM John", purpose: "Intern10 meeting presentation" },
+            { name: "DRW Team", purpose: "Meeting shadowing" },
+            { name: "MCW Team", purpose: "Daily standups and all-hands" }
+          ],
+
+          training: [
+            "Continued Oracle and IBM training modules",
+            "YOLO model training techniques",
+            "Model fine-tuning methods",
+            "Error rate analysis",
+            "DRW ticket management processes",
+            "MCW accounting terminology"
+          ],
+
+          projectWork: [
+            {
+              name: "Boston Dynamics Spot",
+              tasks: [
+                "Trained YOLO11 model using labeled XML data",
+                "Achieved ~99.4% Precision, ~99.4% Recall, ~99.5% mAP50",
+                "Organized computer vision repo",
+                "Added documentation for dataset usage",
+                "Started fine-tuning",
+                "Started error-rate tracking",
+                "Conducted inference testing"
+              ]
+            },
+            {
+              name: "DRW AMS",
+              tasks: [
+                "Shadowed meetings",
+                "Presented Intern10 elevator pitch",
+                "Presented Intern10 meeting presentation",
+                "Recorded feedback",
+                "Summarized action items",
+                "Continued learning ticket management"
+              ]
+            },
+            {
+              name: "MCW Implementation",
+              tasks: [
+                "Joined daily standups and all-hands meetings",
+                "Reviewed accounting vocabulary",
+                "Tracked action items and meeting references",
+                "Built context around implementation work"
+              ]
+            },
+            {
+              name: "Capstone",
+              tasks: [
+                "Designed RAG architecture with ICA",
+                "Built demo RAG/skills",
+                "Researched tokenization",
+                "Created GitHub repo",
+                "Created merge protocol",
+                "Built Obsidian-like documentation structure",
+                "Started presentation",
+                "Coded MVP demo"
+              ]
+            }
+          ],
+
+          technicalWork: [
+            "YOLO11 object detection model training",
+            "Computer vision dataset preparation",
+            "Pascal VOC XML to YOLO format conversion",
+            "Train/validation dataset splitting",
+            "Hyperparameter tuning",
+            "Model evaluation (Precision, Recall, mAP50, mAP50-95)",
+            "Inference testing on unseen images",
+            "GitHub repository organization",
+            "Dataset versioning",
+            "RAG architecture design",
+            "ICA-based demo development",
+            "Google tokenization research",
+            "Code merge protocol design",
+            "Obsidian-style knowledge organization",
+            "MVP development"
+          ],
+
+          deliverables: [
+            "Trained YOLO11 model with ~99% accuracy metrics",
+            "GitHub repo documentation for Spot ML",
+            "Dataset usage documentation",
+            "Intern10 elevator pitch (presented to PM John)",
+            "Intern10 meeting presentation (presented to PM John)",
+            "DRW meeting notes and action items",
+            "MCW meeting notes and references",
+            "RAG architecture documentation",
+            "Capstone GitHub repo with merge protocol",
+            "Capstone MVP demo",
+            "Capstone presentation draft"
+          ],
+
+          metrics: {
+            modelPrecision: 99.4,
+            modelRecall: 99.4,
+            modelMAP50: 99.5,
+            meetingsAttended: 10,
+            presentationsGiven: 2
+          },
+
+          managerSummary: "During Week 3, Rohan made significant technical and project progress. He trained a YOLO model from the labeled Spot dataset, organized the GitHub repo, documented the dataset, and began fine-tuning/error tracking. The model achieved approximately 99.4% Precision, 99.4% Recall, and 99.5% mAP50 on the validation dataset. He also shadowed DRW meetings, presented Intern10 deliverables to PM John, joined MCW meetings, and led capstone development by creating a RAG architecture, GitHub workflow, documentation system, and MVP demo.",
+
+          reflection: "Week 3 was one of the most technical and active weeks so far. I moved deeper into Boston Dynamics Spot work by training a YOLO model, organizing the repository, documenting data usage, and beginning error-rate tracking. I also shadowed DRW meetings, presented Intern10 deliverables to my PM, continued MCW implementation meetings, and made major progress on the capstone. The capstone work became more concrete through RAG architecture, a GitHub repository, documentation structure, and an MVP demo. This week helped me connect technical execution with consulting communication and team leadership.",
+
+          assets: []
+        },
+
+        // Weeks 4-9: Placeholder structure
+        ...Array.from({ length: 6 }, (_, i) => ({
+          week: i + 4,
+          title: "To Be Updated",
+          status: "pending",
+          tags: ["To Be Updated"],
+          mainFocus: "To be updated.",
+          accomplishments: ["To be updated."],
+          meetings: [],
+          training: ["To be updated."],
+          projectWork: [],
+          technicalWork: ["To be updated."],
+          deliverables: ["To be updated."],
+          metrics: {},
+          managerSummary: "To be updated.",
+          reflection: "To be updated.",
+          assets: []
+        }))
+      ]
+    },
+
+    {
+      id: "calvin",
+      name: "Calvin",
+      role: "IBM Intern",
+      totalMetrics: {
+        learningHours: 0,
+        modulesCompleted: 0,
+        badgesEarned: 0,
+        projectsActive: 0
+      },
+      weeks: Array.from({ length: 9 }, (_, i) => ({
+        week: i + 1,
+        title: "To Be Updated",
+        status: "pending",
+        tags: ["To Be Updated"],
+        mainFocus: "To be updated.",
+        accomplishments: ["To be updated."],
+        meetings: [],
+        training: ["To be updated."],
+        projectWork: [],
+        technicalWork: ["To be updated."],
+        deliverables: ["To be updated."],
+        metrics: {},
+        managerSummary: "To be updated.",
+        reflection: "To be updated.",
+        assets: []
+      }))
+    }
+  ]
+};
+
+// Export for use in main script
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = internshipData;
+}

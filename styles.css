@@ -1,0 +1,348 @@
+/* Simple Blog-Style IBM Internship Tracker */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 30px 0;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.person-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.person-btn {
+  padding: 8px 20px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.person-btn:hover {
+  border-color: #0f62fe;
+  color: #0f62fe;
+}
+
+.person-btn.active {
+  background: #0f62fe;
+  color: white;
+  border-color: #0f62fe;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Week Post */
+.week-post {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.week-post.hidden {
+  display: none;
+}
+
+.week-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.week-number {
+  color: #0f62fe;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.week-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.week-meta {
+  color: #666;
+  font-size: 14px;
+}
+
+.week-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #f0f0f0;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Week Content */
+.week-content {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.week-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 25px 0 12px 0;
+  color: #222;
+}
+
+.week-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.week-content li {
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #555;
+}
+
+.week-content li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0f62fe;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.week-content p {
+  margin: 12px 0;
+  color: #555;
+}
+
+/* Project Cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.project-card {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.project-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f62fe;
+  margin-bottom: 8px;
+}
+
+.project-card ul {
+  font-size: 14px;
+}
+
+.project-card li {
+  padding: 4px 0;
+  padding-left: 20px;
+}
+
+.project-card li:before {
+  content: "→";
+  left: 0;
+}
+
+/* Assets */
+.asset-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.asset-item {
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background: #f8f9fa;
+}
+
+.asset-item:hover {
+  transform: scale(1.02);
+}
+
+.asset-thumbnail {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  background: #f0f0f0;
+}
+
+.asset-caption {
+  padding: 10px 8px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  background: white;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-assets {
+  color: #999;
+  font-style: italic;
+  padding: 20px;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  z-index: 1001;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  z-index: 1002;
+}
+
+.modal-close:hover {
+  background: #f0f0f0;
+}
+
+#modal-body {
+  padding: 40px;
+}
+
+#modal-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  .week-post {
+    padding: 20px;
+  }
+
+  .week-title {
+    font-size: 20px;
+  }
+
+  .asset-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

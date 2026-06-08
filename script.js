@@ -1,0 +1,152 @@
+// Simple Blog-Style Internship Tracker
+
+let currentPerson = 'rohan';
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  setupPersonButtons();
+  renderWeeks();
+  setupModal();
+});
+
+// Person switching
+function setupPersonButtons() {
+  document.querySelectorAll('.person-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentPerson = btn.dataset.person;
+
+      document.querySelectorAll('.person-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      renderWeeks();
+    });
+  });
+}
+
+// Render weeks
+function renderWeeks() {
+  const person = internshipData.people.find(p => p.id === currentPerson);
+  const timeline = document.getElementById('timeline');
+
+  const completedWeeks = person.weeks.filter(w => w.status === 'completed');
+
+  timeline.innerHTML = completedWeeks.map(week => `
+    <article class="week-post">
+      <header class="week-header">
+        <div class="week-number">Week ${week.week}</div>
+        <h2 class="week-title">${week.title}</h2>
+        <p class="week-meta">${week.mainFocus}</p>
+        <div class="week-tags">
+          ${week.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        </div>
+      </header>
+
+      <div class="week-content">
+        ${renderWeekContent(week)}
+      </div>
+    </article>
+  `).join('');
+}
+
+// Render week content
+function renderWeekContent(week) {
+  let html = '';
+
+  // Accomplishments
+  if (week.accomplishments && week.accomplishments.length > 0 && week.accomplishments[0] !== 'To be updated.') {
+    html += `
+      <h3>What I Did</h3>
+      <ul>
+        ${week.accomplishments.slice(0, 8).map(item => `<li>${item}</li>`).join('')}
+      </ul>
+    `;
+  }
+
+  // Project Work
+  if (week.projectWork && week.projectWork.length > 0) {
+    const hasProjects = week.projectWork.some(p => typeof p === 'object' && p.name);
+
+    if (hasProjects) {
+      html += `
+        <h3>Projects</h3>
+        <div class="project-grid">
+          ${week.projectWork.filter(p => p.name).map(project => `
+            <div class="project-card">
+              <h4>${project.name}</h4>
+              <ul>
+                ${project.tasks.slice(0, 4).map(task => `<li>${task}</li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+  }
+
+  // Assets
+  const assets = getAssets(week.week);
+  if (assets.length > 0) {
+    html += `
+      <h3>Screenshots</h3>
+      <div class="asset-gallery">
+        ${assets.map(asset => `
+          <div class="asset-item" onclick="openModal('${asset.path.replace(/'/g, "\\'")}')">
+            <img src="${asset.path.split('/').map(p => encodeURIComponent(p)).join('/')}" alt="${asset.name}" class="asset-thumbnail" loading="lazy">
+            <div class="asset-caption">${asset.name}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  return html;
+}
+
+// Get assets for week - AUTO-GENERATED FROM FILESYSTEM
+function getAssets(weekNumber) {
+  const assetMap = {
+    'rohan': {
+      2: [
+        { name: 'IBM Learn', path: 'Rohan/Assets Week 2/571383c8-fbe6-4634-966b-337569372534.png' },
+        { name: 'Oracle Badges', path: 'Rohan/Assets Week 2/Screenshot 2026-06-08 at 10.36.46 AM.png' },
+        { name: 'Training', path: 'Rohan/Assets Week 2/Screenshot 2026-06-08 at 10.38.09 AM.png' },
+        { name: 'Modules', path: 'Rohan/Assets Week 2/Screenshot 2026-06-08 at 10.40.49 AM.png' },
+        { name: 'Certifications', path: 'Rohan/Assets Week 2/Screenshot 2026-06-08 at 10.41.22 AM.png' },
+      ],
+      3: [
+        { name: 'Learning Hours', path: 'Rohan/Assets Week 3/Screenshot 2026-06-08 at 10.35.58 AM.png' },
+        { name: 'IBM Modules', path: 'Rohan/Assets Week 3/Screenshot 2026-06-08 at 10.36.18 AM.png' },
+        { name: 'Badges', path: 'Rohan/Assets Week 3/Screenshot 2026-06-08 at 10.36.33 AM.png' },
+        { name: 'YOLO Results', path: 'Rohan/Assets Week 3/results.png' },
+        { name: 'Model Validation', path: 'Rohan/Assets Week 3/val_batch0_labels.jpg' },
+      ]
+    },
+    'calvin': {}
+  };
+
+  return assetMap[currentPerson]?.[weekNumber] || [];
+}
+
+// Modal
+function setupModal() {
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  document.getElementById('modal-backdrop').addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+}
+
+function openModal(path) {
+  const modal = document.getElementById('modal');
+  const body = document.getElementById('modal-body');
+
+  const encodedPath = path.split('/').map(p => encodeURIComponent(p)).join('/');
+  body.innerHTML = `<img src="${encodedPath}" alt="Asset preview">`;
+  modal.classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.add('hidden');
+  document.getElementById('modal-body').innerHTML = '';
+}

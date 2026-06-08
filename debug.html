@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Debug</title></head>
+<body>
+<h3>Direct Image Test</h3>
+<img src="Rohan/Assets Week 2/571383c8-fbe6-4634-966b-337569372534.png" style="max-width:200px;border:1px solid red;">
+<hr>
+<script src="data/internshipData.js"></script>
+<script>
+console.log('Testing assets...');
+const testAssets = {
+  'rohan': {
+    2: [
+      { name: 'Test', path: 'Rohan/Assets Week 2/571383c8-fbe6-4634-966b-337569372534.png' }
+    ]
+  }
+};
+console.log('Path:', testAssets.rohan[2][0].path);
+</script>
+</body>
+</html>

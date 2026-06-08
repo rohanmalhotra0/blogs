@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM Internship Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>IBM Internship Tracker</h1>
+            <p class="subtitle">9-week progress for Rohan and Calvin</p>
+            <nav class="person-nav">
+                <button class="person-btn active" data-person="rohan">Rohan</button>
+                <button class="person-btn" data-person="calvin">Calvin</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="timeline" id="timeline">
+            <!-- Week posts will be generated here -->
+        </div>
+    </main>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="data/internshipData.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
