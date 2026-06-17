@@ -375,9 +375,162 @@ const internshipData = {
           assets: []
         },
 
-        // Weeks 4-9: Placeholder structure
-        ...Array.from({ length: 6 }, (_, i) => ({
-          week: i + 4,
+        {
+          week: 4,
+          title: "BioCryst AMS Onboarding, MCW Business Rules, Spot Integration, and Capstone Leadership",
+          status: "completed",
+          tags: ["DRW AMS", "BioCryst AMS", "MCW", "Boston Dynamics", "Capstone", "Oracle FDI", "SQL"],
+          mainFocus: "Rohan expanded across both Oracle Managed Services and Implementation work. He joined the BioCryst AMS account, built multiple Oracle EPM business rules for MCW, completed YOLO testing and full Spot integration, and continued leading the capstone project.",
+
+          accomplishments: [
+            "Completed the Intern10 Situational Role Play reflection and documented key takeaways",
+            "Attended an informational session on Oracle AI Agents",
+            "Continued developing and refining Intern10 presentations",
+            "Met with AMS mentor to learn Oracle EPM Managed Services and ticket management",
+            "Met with Project Manager for progress review and performance feedback",
+            "Joined the BioCryst AMS account under Neil Kaufman",
+            "Learned Oracle Financial Data Intelligence (FDI) fundamentals",
+            "Volunteered to support manual ticket sync between client system and IBM JIRA",
+            "Volunteered to develop SQL reports and scripting solutions for automation",
+            "Developed second Oracle EPM Business Rule (rolling 13-day forecast)",
+            "Implemented prior-month and current-day forecasting logic",
+            "Created first report for the Predictive Cash Flow model",
+            "Completed YOLO model testing with ~99% detection accuracy",
+            "Completed full Boston Dynamics Spot integration",
+            "Implemented Spot movement controls, safety features, and emergency kill-switch",
+            "Developed a custom dance routine for Spot using the Boston Dynamics SDK",
+            "Established and tested a gRPC server connection with the robot",
+            "Integrated YOLO model with Spot using multithreaded architecture and lock-free queue",
+            "Led a technical tutoring session on how IBM ICA works internally",
+            "Integrated IBM Granite models into the Nexus platform",
+            "Implemented text-to-speech and speech-to-text functionality",
+            "Added cross-model support to ICA and optimized with multithreading"
+          ],
+
+          meetings: [
+            { name: "AMS Mentor", purpose: "Oracle EPM Managed Services and ticket management" },
+            { name: "Project Manager", purpose: "Progress review and performance feedback" },
+            { name: "Neil Kaufman", purpose: "BioCryst AMS account onboarding" },
+            { name: "Parker", purpose: "Daily business rule and reporting reviews" },
+            { name: "Pedro and Project Team", purpose: "MCW daily implementation and all-hands" },
+            { name: "Capstone Mentor", purpose: "Project progress review and technical feedback" },
+            { name: "Capstone Team", purpose: "All-hands milestone and planning meetings" }
+          ],
+
+          training: [
+            "Oracle AI Agents informational session",
+            "Oracle EPM Managed Services and ticket management",
+            "Oracle Financial Data Intelligence (FDI) fundamentals",
+            "Oracle ERP Financials and core financial business processes",
+            "Oracle Planning Business Rules, Groovy scripting, and calculation scripts",
+            "Oracle Planning Forms, Dimensions, and metadata structure",
+            "Boston Dynamics Spot SDK and gRPC communication"
+          ],
+
+          projectWork: [
+            {
+              name: "DRW AMS",
+              tasks: [
+                "Completed Intern10 Situational Role Play reflection",
+                "Met with AMS mentor on EPM Managed Services and ticket management",
+                "Met with PM for progress review and feedback",
+                "Expanded understanding of AMS operations and support processes"
+              ]
+            },
+            {
+              name: "BioCryst AMS",
+              tasks: [
+                "Joined the account under Neil Kaufman",
+                "Learned Oracle FDI fundamentals and ERP reporting integration",
+                "Assisted with manual ticket sync between client system and JIRA",
+                "Volunteered to develop SQL reports and scripting for automation",
+                "Began learning the BioCryst support workflow and ticket lifecycle"
+              ]
+            },
+            {
+              name: "MCW Implementation",
+              tasks: [
+                "Developed second Oracle EPM Business Rule",
+                "Implemented rolling 13-day forecast business rule",
+                "Implemented prior-month and current-day forecasting logic",
+                "Created first report for the Predictive Cash Flow model",
+                "Met daily with Parker to review business rule logic and reporting",
+                "Participated in daily implementation meetings with Pedro and team"
+              ]
+            },
+            {
+              name: "Boston Dynamics Spot",
+              tasks: [
+                "Completed YOLO model testing (~99% detection accuracy)",
+                "Transitioned from model development into full Spot integration",
+                "Implemented movement controls, safety features, and kill-switch",
+                "Developed a custom dance routine using the Spot SDK",
+                "Established and tested a gRPC server connection",
+                "Integrated YOLO with Spot via multithreaded, lock-free queue architecture",
+                "Began a technical presentation for IBM Dev Club"
+              ]
+            },
+            {
+              name: "Capstone",
+              tasks: [
+                "Met with capstone mentor for progress review and feedback",
+                "Led a technical tutoring session on IBM ICA internals",
+                "Continued as Team Lead organizing meetings and action items",
+                "Integrated IBM Granite models into the Nexus platform",
+                "Implemented text-to-speech and speech-to-text functionality",
+                "Added cross-model support to ICA",
+                "Optimized the application with multithreading to reduce latency"
+              ]
+            }
+          ],
+
+          technicalWork: [
+            "Oracle EPM business rules (rolling 13-day, prior-month, current-day forecasting)",
+            "Groovy scripting and calculation scripts",
+            "Oracle Planning Forms and Dimensions",
+            "Predictive Cash Flow model reporting",
+            "Oracle FDI and ERP reporting integration",
+            "SQL report development and scripting automation",
+            "YOLO object detection testing (~99% accuracy)",
+            "Boston Dynamics Spot SDK integration",
+            "gRPC server connection",
+            "Multithreaded inference with lock-free queue",
+            "IBM Granite model integration",
+            "Text-to-speech and speech-to-text implementation",
+            "Cross-model ICA support and RAG refinement"
+          ],
+
+          deliverables: [
+            "Intern10 Situational Role Play reflection",
+            "Refined Intern10 presentations",
+            "Second Oracle EPM Business Rule (rolling 13-day forecast)",
+            "Prior-month and current-day forecasting logic",
+            "First Predictive Cash Flow model report",
+            "SQL reporting/automation proposals for BioCryst",
+            "Tested YOLO model integrated with Spot",
+            "Spot movement, safety, kill-switch, and dance routine",
+            "gRPC server connection for Spot",
+            "IBM Dev Club presentation (in progress)",
+            "Nexus platform with Granite, TTS/STT, and cross-model ICA support"
+          ],
+
+          metrics: {
+            modelAccuracy: 99,
+            businessRules: 2,
+            accountsJoined: 1,
+            meetingsAttended: 7
+          },
+
+          managerSummary: "During Week 4, Rohan broadened his impact across both Oracle Managed Services and Implementation. He joined the BioCryst AMS account under Neil Kaufman, learned Oracle FDI, and volunteered to build SQL reporting and ticket-sync automation. On MCW, he developed multiple Oracle EPM business rules including a rolling 13-day forecast and built the first Predictive Cash Flow report. He completed YOLO model testing at ~99% accuracy and fully integrated the model with Boston Dynamics Spot, adding movement controls, safety features, a kill-switch, a dance routine, and a gRPC connection with a multithreaded inference pipeline. He continued leading the capstone, integrating IBM Granite models, TTS/STT, and cross-model support into the Nexus platform.",
+
+          reflection: "Week 4 stretched me across more areas than any previous week. I joined the BioCryst AMS account and started learning Oracle FDI, ticket workflows, and SQL automation, while on MCW I went deeper into Oracle EPM by building real business rules and my first Predictive Cash Flow report. On the technical side, I finished testing the YOLO model and fully integrated it with Spot, including movement controls, safety features, a kill-switch, a dance routine, and a gRPC connection with a multithreaded, lock-free inference pipeline. I also kept leading the capstone, integrating Granite models, speech features, and cross-model support into Nexus. This week showed me how Oracle consulting, managed services, machine learning, and team leadership all come together.",
+
+          assets: []
+        },
+
+        // Weeks 5-9: Placeholder structure
+        ...Array.from({ length: 5 }, (_, i) => ({
+          week: i + 5,
           title: "To Be Updated",
           status: "pending",
           tags: ["To Be Updated"],

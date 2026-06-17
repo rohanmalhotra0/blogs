@@ -122,6 +122,13 @@ function getAssets(weekNumber) {
         { name: 'Badges', path: 'Rohan/Assets Week 3/week3-03.png' },
         { name: 'YOLO Results', path: 'Rohan/Assets Week 3/week3-04.png' },
         { name: 'Model Validation', path: 'Rohan/Assets Week 3/week3-05.jpg' },
+      ],
+      4: [
+        { name: 'BioCryst AMS', path: 'Rohan/Assets Week 4/week4-01.png' },
+        { name: 'MCW Business Rules', path: 'Rohan/Assets Week 4/week4-02.png' },
+        { name: 'Predictive Cash Flow', path: 'Rohan/Assets Week 4/week4-03.png' },
+        { name: 'Spot Integration', path: 'Rohan/Assets Week 4/week4-04.png' },
+        { name: 'Capstone / Nexus', path: 'Rohan/Assets Week 4/week4-05.png' },
       ]
     },
     'calvin': {}
