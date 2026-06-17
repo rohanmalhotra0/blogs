@@ -106,19 +106,22 @@ function renderWeekContent(week) {
 function getAssets(weekNumber) {
   const assetMap = {
     'rohan': {
+      1: [
+        { name: 'Schedule', path: 'Rohan/Assets Week 1/week1-01.png' },
+      ],
       2: [
-        { name: 'IBM Learn', path: 'Rohan/Assets Week 2/571383c8-fbe6-4634-966b-337569372534.png' },
-        { name: 'Oracle Badges', path: 'Rohan/Assets Week 2/Screenshot 2026-06-08 at 10.36.46 AM.png' },
-        { name: 'Training', path: 'Rohan/Assets Week 2/Screenshot 2026-06-08 at 10.38.09 AM.png' },
-        { name: 'Modules', path: 'Rohan/Assets Week 2/Screenshot 2026-06-08 at 10.40.49 AM.png' },
-        { name: 'Certifications', path: 'Rohan/Assets Week 2/Screenshot 2026-06-08 at 10.41.22 AM.png' },
+        { name: 'IBM Learn', path: 'Rohan/Assets Week 2/week2-01.png' },
+        { name: 'Oracle Badges', path: 'Rohan/Assets Week 2/week2-02.png' },
+        { name: 'Training', path: 'Rohan/Assets Week 2/week2-03.png' },
+        { name: 'Modules', path: 'Rohan/Assets Week 2/week2-04.png' },
+        { name: 'Certifications', path: 'Rohan/Assets Week 2/week2-05.png' },
       ],
       3: [
-        { name: 'Learning Hours', path: 'Rohan/Assets Week 3/Screenshot 2026-06-08 at 10.35.58 AM.png' },
-        { name: 'IBM Modules', path: 'Rohan/Assets Week 3/Screenshot 2026-06-08 at 10.36.18 AM.png' },
-        { name: 'Badges', path: 'Rohan/Assets Week 3/Screenshot 2026-06-08 at 10.36.33 AM.png' },
-        { name: 'YOLO Results', path: 'Rohan/Assets Week 3/results.png' },
-        { name: 'Model Validation', path: 'Rohan/Assets Week 3/val_batch0_labels.jpg' },
+        { name: 'Learning Hours', path: 'Rohan/Assets Week 3/week3-01.png' },
+        { name: 'IBM Modules', path: 'Rohan/Assets Week 3/week3-02.png' },
+        { name: 'Badges', path: 'Rohan/Assets Week 3/week3-03.png' },
+        { name: 'YOLO Results', path: 'Rohan/Assets Week 3/week3-04.png' },
+        { name: 'Model Validation', path: 'Rohan/Assets Week 3/week3-05.jpg' },
       ]
     },
     'calvin': {}
