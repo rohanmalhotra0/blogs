@@ -4,23 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IBM Internship Tracker</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>IBM Internship Tracker</h1>
-            <p class="subtitle">9-week progress for Rohan and Calvin</p>
-            <nav class="person-nav">
-                <button class="person-btn active" data-person="rohan">Rohan</button>
-                <button class="person-btn" data-person="calvin">Calvin</button>
+            <p class="eyebrow">IBM Internship</p>
+            <h1>Rohan's Internship Tracker</h1>
+            <p class="subtitle">A week-by-week log of progress, projects, and learning across the 9-week program.</p>
+            <nav class="view-nav">
+                <button class="view-btn active" data-view="timeline">Timeline</button>
+                <button class="view-btn" data-view="presentation">Presentation</button>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <div class="timeline" id="timeline">
-            <!-- Week posts will be generated here -->
+        <div class="view" id="timeline-view">
+            <div id="mcw-spotlight"></div>
+            <div class="timeline" id="timeline">
+                <!-- Week posts will be generated here -->
+            </div>
+        </div>
+
+        <div class="view hidden" id="presentation-view">
+            <div class="deck" id="deck">
+                <div class="slide-stage" id="slide-stage"></div>
+                <div class="deck-controls">
+                    <button class="deck-btn" id="deck-prev" aria-label="Previous slide">&larr;</button>
+                    <div class="deck-dots" id="deck-dots"></div>
+                    <button class="deck-btn" id="deck-next" aria-label="Next slide">&rarr;</button>
+                </div>
+            </div>
         </div>
     </main>
 

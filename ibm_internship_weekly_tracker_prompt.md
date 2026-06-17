@@ -16,7 +16,7 @@ Use clear Markdown formatting. Keep the writing detailed but professional. Do no
 
 # IBM Internship Weekly Progress Tracker
 
-## Week 1 — Onboarding, Self-Learning, Networking, and Initial Interviews
+## Week 1 , Onboarding, Self-Learning, Networking, and Initial Interviews
 
 ### Overview
 
@@ -74,7 +74,7 @@ Week 1 was focused on building a strong base for the internship. I completed all
 
 ---
 
-## Week 2 — Oracle Training, DRW AMS, MCW Implementation, Boston Dynamics Spot, and Capstone Leadership
+## Week 2 , Oracle Training, DRW AMS, MCW Implementation, Boston Dynamics Spot, and Capstone Leadership
 
 ### Overview
 
@@ -104,7 +104,7 @@ During Week 2, I moved from onboarding into more active project work. I continue
 
 ---
 
-## Week 2 — DRW AMS
+## Week 2 , DRW AMS
 
 ### Work Completed
 
@@ -124,7 +124,7 @@ During Week 2, I moved from onboarding into more active project work. I continue
 
 ---
 
-## Week 2 — EPM Intern10 Deliverables
+## Week 2 , EPM Intern10 Deliverables
 
 ### Work Completed
 
@@ -141,7 +141,7 @@ During Week 2, I moved from onboarding into more active project work. I continue
 
 ---
 
-## Week 2 — MCW Implementation
+## Week 2 , MCW Implementation
 
 ### Work Completed
 
@@ -169,7 +169,7 @@ During Week 2, I moved from onboarding into more active project work. I continue
 
 ---
 
-## Week 2 — Client Call Shadowing and Task Shadowing
+## Week 2 , Client Call Shadowing and Task Shadowing
 
 ### Work Completed
 
@@ -187,7 +187,7 @@ During Week 2, I moved from onboarding into more active project work. I continue
 
 ---
 
-## Week 2 — Boston Dynamics Spot
+## Week 2 , Boston Dynamics Spot
 
 ### Work Completed
 
@@ -222,7 +222,7 @@ During Week 2, I moved from onboarding into more active project work. I continue
 
 ---
 
-## Week 2 — Capstone Project
+## Week 2 , Capstone Project
 
 ### Work Completed
 
@@ -248,7 +248,7 @@ Week 2 was a major step forward because I moved from onboarding into real projec
 
 ---
 
-# Week 3 — YOLO Model Training, DRW Shadowing, MCW Meetings, and Capstone MVP Development
+# Week 3 , YOLO Model Training, DRW Shadowing, MCW Meetings, and Capstone MVP Development
 
 ## Overview
 
@@ -287,7 +287,7 @@ During Week 3, I continued Oracle and IBM training while moving deeper into proj
 
 ---
 
-## Week 3 — Boston Dynamics Spot and YOLO11 Object Detection Model Training
+## Week 3 , Boston Dynamics Spot and YOLO11 Object Detection Model Training
 
 ### Main Focus
 
@@ -397,7 +397,7 @@ During Week 3, I trained a custom YOLO11 object detection model for the Boston D
 
 ---
 
-## Week 3 — DRW AMS
+## Week 3 , DRW AMS
 
 ### Work Completed
 
@@ -422,7 +422,7 @@ During Week 3, I trained a custom YOLO11 object detection model for the Boston D
 
 ---
 
-## Week 3 — MCW Implementation
+## Week 3 , MCW Implementation
 
 ### Work Completed
 
@@ -444,7 +444,7 @@ During Week 3, I trained a custom YOLO11 object detection model for the Boston D
 
 ---
 
-## Week 3 — Capstone Project
+## Week 3 , Capstone Project
 
 ### Work Completed
 

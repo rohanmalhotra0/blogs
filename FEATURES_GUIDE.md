@@ -94,9 +94,9 @@ When you click a week header, it expands to show:
 │ ... (more bullets)                                       │
 │                                                          │
 │ Meetings                                                 │
-│ • Summer and Tono — Spot progress review (2 meetings)  │
-│ • PM John — DRW AMS check-in                           │
-│ • PM John — Intern10 elevator pitch presentation       │
+│ • Summer and Tono , Spot progress review (2 meetings)  │
+│ • PM John , DRW AMS check-in                           │
+│ • PM John , Intern10 elevator pitch presentation       │
 │ ... (more meetings)                                      │
 │                                                          │
 │ Training & Learning                                      │
