@@ -377,10 +377,10 @@ const internshipData = {
 
         {
           week: 4,
-          title: "BioCryst AMS Onboarding, MCW Business Rules, Spot Integration, and Capstone Leadership",
+          title: "MCW Business Rules, Spot Integration, and Capstone Leadership",
           status: "completed",
-          tags: ["DRW AMS", "BioCryst AMS", "MCW", "Boston Dynamics", "Capstone", "Oracle FDI", "SQL"],
-          mainFocus: "Rohan expanded across both Oracle Managed Services and Implementation work. He joined the BioCryst AMS account, built multiple Oracle EPM business rules for MCW, completed YOLO testing and full Spot integration, and continued leading the capstone project.",
+          tags: ["DRW AMS", "MCW", "Boston Dynamics", "Capstone", "Oracle EPM", "Groovy"],
+          mainFocus: "Rohan expanded across both Oracle Managed Services and Implementation work. He built multiple Oracle EPM business rules for MCW, completed YOLO testing and full Spot integration, and continued leading the capstone project.",
 
           accomplishments: [
             "Completed the Intern10 Situational Role Play reflection and documented key takeaways",
@@ -388,10 +388,6 @@ const internshipData = {
             "Continued developing and refining Intern10 presentations",
             "Met with AMS mentor to learn Oracle EPM Managed Services and ticket management",
             "Met with Project Manager for progress review and performance feedback",
-            "Joined the BioCryst AMS account under Neil Kaufman",
-            "Learned Oracle Financial Data Intelligence (FDI) fundamentals",
-            "Volunteered to support manual ticket sync between client system and IBM JIRA",
-            "Volunteered to develop SQL reports and scripting solutions for automation",
             "Developed second Oracle EPM Business Rule (rolling 13-day forecast)",
             "Implemented prior-month and current-day forecasting logic",
             "Created first report for the Predictive Cash Flow model",
@@ -410,7 +406,6 @@ const internshipData = {
           meetings: [
             { name: "AMS Mentor", purpose: "Oracle EPM Managed Services and ticket management" },
             { name: "Project Manager", purpose: "Progress review and performance feedback" },
-            { name: "Neil Kaufman", purpose: "BioCryst AMS account onboarding" },
             { name: "Parker", purpose: "Daily business rule and reporting reviews" },
             { name: "Pedro and Project Team", purpose: "MCW daily implementation and all-hands" },
             { name: "Capstone Mentor", purpose: "Project progress review and technical feedback" },
@@ -420,7 +415,6 @@ const internshipData = {
           training: [
             "Oracle AI Agents informational session",
             "Oracle EPM Managed Services and ticket management",
-            "Oracle Financial Data Intelligence (FDI) fundamentals",
             "Oracle ERP Financials and core financial business processes",
             "Oracle Planning Business Rules, Groovy scripting, and calculation scripts",
             "Oracle Planning Forms, Dimensions, and metadata structure",
@@ -435,16 +429,6 @@ const internshipData = {
                 "Met with AMS mentor on EPM Managed Services and ticket management",
                 "Met with PM for progress review and feedback",
                 "Expanded understanding of AMS operations and support processes"
-              ]
-            },
-            {
-              name: "BioCryst AMS",
-              tasks: [
-                "Joined the account under Neil Kaufman",
-                "Learned Oracle FDI fundamentals and ERP reporting integration",
-                "Assisted with manual ticket sync between client system and JIRA",
-                "Volunteered to develop SQL reports and scripting for automation",
-                "Began learning the BioCryst support workflow and ticket lifecycle"
               ]
             },
             {
@@ -489,8 +473,6 @@ const internshipData = {
             "Groovy scripting and calculation scripts",
             "Oracle Planning Forms and Dimensions",
             "Predictive Cash Flow model reporting",
-            "Oracle FDI and ERP reporting integration",
-            "SQL report development and scripting automation",
             "YOLO object detection testing (~99% accuracy)",
             "Boston Dynamics Spot SDK integration",
             "gRPC server connection",
@@ -506,7 +488,6 @@ const internshipData = {
             "Second Oracle EPM Business Rule (rolling 13-day forecast)",
             "Prior-month and current-day forecasting logic",
             "First Predictive Cash Flow model report",
-            "SQL reporting/automation proposals for BioCryst",
             "Tested YOLO model integrated with Spot",
             "Spot movement, safety, kill-switch, and dance routine",
             "gRPC server connection for Spot",
@@ -517,20 +498,144 @@ const internshipData = {
           metrics: {
             modelAccuracy: 99,
             businessRules: 2,
-            accountsJoined: 1,
             meetingsAttended: 7
           },
 
-          managerSummary: "During Week 4, Rohan broadened his impact across both Oracle Managed Services and Implementation. He joined the BioCryst AMS account under Neil Kaufman, learned Oracle FDI, and volunteered to build SQL reporting and ticket-sync automation. On MCW, he developed multiple Oracle EPM business rules including a rolling 13-day forecast and built the first Predictive Cash Flow report. He completed YOLO model testing at ~99% accuracy and fully integrated the model with Boston Dynamics Spot, adding movement controls, safety features, a kill-switch, a dance routine, and a gRPC connection with a multithreaded inference pipeline. He continued leading the capstone, integrating IBM Granite models, TTS/STT, and cross-model support into the Nexus platform.",
+          managerSummary: "During Week 4, Rohan broadened his impact across both Oracle Managed Services and Implementation. He met with his AMS mentor and PM to deepen his understanding of Oracle EPM Managed Services and ticket management. On MCW, he developed multiple Oracle EPM business rules including a rolling 13-day forecast and built the first Predictive Cash Flow report. He completed YOLO model testing at ~99% accuracy and fully integrated the model with Boston Dynamics Spot, adding movement controls, safety features, a kill-switch, a dance routine, and a gRPC connection with a multithreaded inference pipeline. He continued leading the capstone, integrating IBM Granite models, TTS/STT, and cross-model support into the Nexus platform.",
 
-          reflection: "Week 4 stretched me across more areas than any previous week. I joined the BioCryst AMS account and started learning Oracle FDI, ticket workflows, and SQL automation, while on MCW I went deeper into Oracle EPM by building real business rules and my first Predictive Cash Flow report. On the technical side, I finished testing the YOLO model and fully integrated it with Spot, including movement controls, safety features, a kill-switch, a dance routine, and a gRPC connection with a multithreaded, lock-free inference pipeline. I also kept leading the capstone, integrating Granite models, speech features, and cross-model support into Nexus. This week showed me how Oracle consulting, managed services, machine learning, and team leadership all come together.",
+          reflection: "Week 4 stretched me across more areas than any previous week. I deepened my understanding of Oracle EPM Managed Services and ticket management, while on MCW I went deeper into Oracle EPM by building real business rules and my first Predictive Cash Flow report. On the technical side, I finished testing the YOLO model and fully integrated it with Spot, including movement controls, safety features, a kill-switch, a dance routine, and a gRPC connection with a multithreaded, lock-free inference pipeline. I also kept leading the capstone, integrating Granite models, speech features, and cross-model support into Nexus. This week showed me how Oracle consulting, managed services, machine learning, and team leadership all come together.",
 
           assets: []
         },
 
-        // Weeks 5-9: Placeholder structure
-        ...Array.from({ length: 5 }, (_, i) => ({
-          week: i + 5,
+        {
+          week: 5,
+          title: "MCW EPM AI Agent, SOFR Business Rules, DRW Presentation, and Capstone Delivery",
+          status: "completed",
+          tags: ["MCW", "Oracle EPM", "AI Agent", "Groovy", "DRW AMS", "Boston Dynamics", "Capstone"],
+          mainFocus: "Rohan went deeper into MCW Implementation by building EPM dashboards, a new SOFR loan business rule, and architecting an Oracle EPM AI agent chat platform. He also delivered an Oracle EPM presentation for DRW AMS, advanced the Boston Dynamics Spot integration, and completed and submitted the IBM Capstone a week early.",
+
+          accomplishments: [
+            "Continued building Predictive Cash Forecasting (PCF) dashboards to understand reporting structure and forecasting workflows",
+            "Developed a new Oracle EPM business rule for SOFR loan percentage population logic",
+            "Architected a chat interface platform for an Oracle EPM AI agent to improve productivity and user guidance",
+            "Connected ICA API keys to the AI agent for secure, private, and controlled data usage",
+            "Added major platform capabilities: Skills, Bookmarks, Projects, confidence indicators, customizable agents, MCP support, and file attachments",
+            "Began creating a desktop Oracle EPM application and deployed the platform locally with thorough testing",
+            "Delivered an Oracle EPM presentation to John and revised the deck based on feedback for executive readability",
+            "Researched Oracle EPM implementation cost, timeline, and pros/cons to support client decision criteria",
+            "Continued the final Spot dance routine and troubleshot gRPC server and robot connection issues",
+            "Added text-to-speech and speech-to-text to the IBM Nexus capstone demo",
+            "Completed and submitted the final IBM Capstone presentation and video one week early",
+            "Researched the Functional Consultant Pyramid Speaking Framework to improve client-facing communication"
+          ],
+
+          meetings: [
+            { name: "Parker", purpose: "Daily Oracle EPM curriculum, Planning, and business rule reviews" },
+            { name: "MCW Project Team", purpose: "Daily standups and implementation progress tracking" },
+            { name: "John", purpose: "Oracle EPM presentation delivery and feedback" },
+            { name: "Rahul", purpose: "IDE setup and local testing support" },
+            { name: "Capstone Mentor", purpose: "Final presentation coordination and review" },
+            { name: "Capstone Team", purpose: "Final presentation prep and submission planning" }
+          ],
+
+          training: [
+            "Functional Consultant Pyramid Speaking Framework",
+            "Oracle EPM security, user/group access, and read/write permissions",
+            "Groovy documentation for business rule development and Planning customization",
+            "Oracle EPM Planning functionality and technical best practices",
+            "Oracle EPM implementation cost, timeline, and tradeoff analysis"
+          ],
+
+          projectWork: [
+            {
+              name: "MCW Implementation",
+              tasks: [
+                "Continued building PCF dashboards to understand reporting structure and cash forecasting workflows",
+                "Developed a new Oracle EPM business rule for SOFR loan percentage population logic",
+                "Architected a chat interface platform for an Oracle EPM AI agent",
+                "Connected ICA API keys to the agent for secure, private data usage",
+                "Used an open-source chat platform to accelerate development and simplify the user experience",
+                "Added Skills, Bookmarks, Projects, confidence indicators, customizable agents, MCP support, and file attachments",
+                "Deployed the application locally and completed thorough testing for functionality and stability",
+                "Set up dependencies and configured the IDE environment for Rahul",
+                "Met daily with Parker on Oracle EPM curriculum, Planning, and best practices",
+                "Learned Oracle EPM security, access control, and continued studying Groovy"
+              ]
+            },
+            {
+              name: "DRW AMS",
+              tasks: [
+                "Created and delivered an Oracle EPM presentation to John on core EPM concepts and project value",
+                "Revised the deck after feedback to improve structure, clarity, and executive readability",
+                "Added an agenda slide and a cost and duration slide to make the deck client-ready",
+                "Researched approximate cost and timeline estimates for Oracle EPM implementations",
+                "Researched the pros and cons of Oracle EPM implementations and client decision criteria",
+                "Created a feedback form for interns and personal Intern10 use",
+                "Attended all non-conflicting DRW meetings and took detailed notes"
+              ]
+            },
+            {
+              name: "Boston Dynamics Spot",
+              tasks: [
+                "Set up and refined the Spot development environment while troubleshooting gRPC and connection issues",
+                "Continued the final Spot dance routine and movement sequence for reaching the dog toy",
+                "Added project documentation to make setup and workflow easier to reproduce",
+                "Created and updated requirements.txt to simplify dependency installation",
+                "Reorganized project files and added shell scripting to mitigate dependency issues"
+              ]
+            },
+            {
+              name: "Capstone",
+              tasks: [
+                "Met with the team to organize responsibilities and review final presentation progress",
+                "Continued developing the IBM Nexus demo with text-to-speech and speech-to-text",
+                "Scheduled mentor meetings and managed team communication and follow-up planning",
+                "Completed the final presentation and supporting materials",
+                "Finished the final IBM Capstone video and submitted all materials one week early"
+              ]
+            }
+          ],
+
+          technicalWork: [
+            "Oracle EPM business rule for SOFR loan percentage population logic",
+            "Groovy scripting and Oracle Planning business rule development",
+            "Predictive Cash Forecasting (PCF) dashboard design",
+            "Oracle EPM AI agent chat platform architecture",
+            "ICA API key integration for secure data usage",
+            "Open-source chat platform extension (Skills, Bookmarks, Projects, MCP, file attachments)",
+            "Desktop Oracle EPM application and local deployment",
+            "Boston Dynamics Spot SDK, gRPC server connection, and dance routine",
+            "Text-to-speech and speech-to-text integration for IBM Nexus"
+          ],
+
+          deliverables: [
+            "New Oracle EPM SOFR loan business rule",
+            "Predictive Cash Forecasting dashboards",
+            "Oracle EPM AI agent chat platform (locally deployed)",
+            "Oracle EPM presentation delivered to John (revised after feedback)",
+            "Cost, timeline, and pros/cons research for Oracle EPM implementations",
+            "Intern10 feedback form",
+            "Updated Spot environment, documentation, and requirements.txt",
+            "Final IBM Capstone presentation and video (submitted one week early)"
+          ],
+
+          metrics: {
+            businessRules: 1,
+            meetingsAttended: 6,
+            capstoneSubmitted: "1 week early"
+          },
+
+          managerSummary: "During Week 5, Rohan deepened his MCW Implementation work by building Predictive Cash Forecasting dashboards, developing a new Oracle EPM business rule for SOFR loan percentage logic, and architecting an Oracle EPM AI agent chat platform. He connected ICA API keys for secure data usage, extended an open-source chat platform with Skills, Bookmarks, Projects, MCP support, and file attachments, and deployed the application locally with thorough testing. On DRW AMS he delivered and revised an Oracle EPM presentation for John, researched implementation cost and timelines, and built an intern feedback form. He advanced the Boston Dynamics Spot integration, troubleshot the gRPC connection, and improved project documentation. He also completed and submitted the final IBM Capstone presentation and video one week early.",
+
+          reflection: "Week 5 was focused on turning my Oracle EPM knowledge into real implementation work. On MCW I built PCF dashboards, wrote a new SOFR loan business rule, and architected an AI agent chat platform connected to ICA, adding capabilities like Skills, Projects, MCP support, and file attachments before deploying it locally. On DRW AMS I delivered an Oracle EPM presentation to John, refined it based on feedback, and researched implementation cost and tradeoffs. I kept improving the Boston Dynamics Spot integration and documentation, and I finished and submitted the IBM Capstone a full week early. This week showed me how technical EPM work, AI tooling, consulting communication, and team leadership all reinforce each other.",
+
+          assets: []
+        },
+
+        // Weeks 6-9: Placeholder structure
+        ...Array.from({ length: 4 }, (_, i) => ({
+          week: i + 6,
           title: "To Be Updated",
           status: "pending",
           tags: ["To Be Updated"],

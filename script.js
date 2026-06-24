@@ -201,6 +201,13 @@ function getAssets(weekNumber) {
         { name: 'Normalized Confusion Matrix', path: 'Rohan/Assets Week 4/week4-03.png' },
         { name: 'Cash Flow Test Report', path: 'Rohan/Assets Week 4/week4-04.png' },
         { name: 'Report Grid Definition', path: 'Rohan/Assets Week 4/week4-05.png' },
+      ],
+      5: [
+        { name: 'PCF Cash Flow Dashboard', path: 'Rohan/Assets Week 5/week5-01.png' },
+        { name: 'SOFR Loan Business Rule', path: 'Rohan/Assets Week 5/week5-02.png' },
+        { name: 'Oracle EPM AI Agent Interface', path: 'Rohan/Assets Week 5/week5-03.png' },
+        { name: 'EPM Copilot Deployment Setup', path: 'Rohan/Assets Week 5/week5-04.png' },
+        { name: 'Intern Presentation Feedback Form', path: 'Rohan/Assets Week 5/week5-05.png' },
       ]
     }
   };
