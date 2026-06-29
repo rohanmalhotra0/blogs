@@ -750,6 +750,11 @@ const internshipData = {
 
           links: [
             {
+              label: "Dev Club IBM — Spot Dog-toy Detection",
+              url: "https://www.youtube.com/watch?v=ba-QHNwbSI4",
+              thumbnail: "https://img.youtube.com/vi/ba-QHNwbSI4/maxresdefault.jpg"
+            },
+            {
               label: "Watch the IBM Capstone Video — NEXUS (Dallas Team 2)",
               url: "https://ibm-my.sharepoint.com/personal/agnes_mathew_ibm_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fagnes%5Fmathew%5Fibm%5Fcom%2FDocuments%2FVideos%2FClipchamp%2FVideo%20Project%2FExports%2FIntern%20Capstone%20Project%20%2D%20Dallas%20Team%202%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eab906fab%2Da11d%2D461e%2Da351%2D710967c4f843&ga=1"
             }

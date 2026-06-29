@@ -213,6 +213,72 @@ header h1 {
   text-decoration: underline;
 }
 
+/* Video link cards with thumbnail */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 15px 0;
+}
+
+.video-card {
+  display: block;
+  text-decoration: none;
+  color: #222;
+}
+
+.video-thumb {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+.video-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.video-card:hover .video-thumb img {
+  transform: scale(1.03);
+}
+
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(15, 98, 254, 0.92);
+  color: #fff;
+  font-size: 20px;
+  padding-left: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+.video-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f62fe;
+  line-height: 1.4;
+}
+
+.video-card:hover .video-label {
+  text-decoration: underline;
+}
+
 /* Project Cards */
 .project-grid {
   display: grid;

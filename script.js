@@ -157,14 +157,36 @@ function renderWeekContent(week) {
 
   // Links (e.g. project / capstone videos)
   if (week.links && week.links.length > 0) {
-    html += `
-      <h3>Watch &amp; Links</h3>
-      <ul class="week-links">
-        ${week.links.map(link => `
-          <li><a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label} &#8599;</a></li>
-        `).join('')}
-      </ul>
-    `;
+    const videos = week.links.filter(l => l.thumbnail);
+    const plain = week.links.filter(l => !l.thumbnail);
+
+    html += `<h3>Watch &amp; Links</h3>`;
+
+    if (videos.length > 0) {
+      html += `
+        <div class="video-grid">
+          ${videos.map(link => `
+            <a class="video-card" href="${link.url}" target="_blank" rel="noopener noreferrer">
+              <span class="video-thumb">
+                <img src="${link.thumbnail}" alt="${link.label}" loading="lazy">
+                <span class="video-play" aria-hidden="true">&#9654;</span>
+              </span>
+              <span class="video-label">${link.label}</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    if (plain.length > 0) {
+      html += `
+        <ul class="week-links">
+          ${plain.map(link => `
+            <li><a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label} &#8599;</a></li>
+          `).join('')}
+        </ul>
+      `;
+    }
   }
 
   // Assets
