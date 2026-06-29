@@ -105,7 +105,7 @@ const internshipData = {
           title: "Oracle Training, DRW AMS, MCW Implementation, Spot, and Capstone Leadership",
           status: "completed",
           tags: ["Oracle", "DRW AMS", "MCW", "Boston Dynamics", "Capstone", "Intern10"],
-          mainFocus: "I moved from onboarding into active project work — starting Intern10 project documentation, completing Oracle and IBM training, joining the DRW AMS and MCW Implementation workstreams, beginning Boston Dynamics Spot ML work, and taking a leadership role on the capstone project.",
+          mainFocus: "I moved from onboarding into active project work: starting Intern10 project documentation, completing Oracle and IBM training, joining the DRW AMS and MCW Implementation workstreams, beginning Boston Dynamics Spot ML work, and taking a leadership role on the capstone project.",
 
           accomplishments: [
             "Met with buddy, PM, and manager",
@@ -233,7 +233,7 @@ const internshipData = {
           title: "YOLO Model Training, DRW Shadowing, MCW Meetings, and Capstone MVP",
           status: "completed",
           tags: ["YOLO", "ML Training", "DRW AMS", "MCW", "Capstone", "RAG"],
-          mainFocus: "I continued training and moved deeper into technical execution — training a YOLO model, documenting the Spot ML repo, shadowing DRW meetings, joining MCW standups, and building the first version of the capstone demo.",
+          mainFocus: "I continued training and moved deeper into technical execution: training a YOLO model, documenting the Spot ML repo, shadowing DRW meetings, joining MCW standups, and building the first version of the capstone demo.",
 
           accomplishments: [
             "Continued completing Oracle and IBM training modules",
@@ -380,7 +380,7 @@ const internshipData = {
           title: "MCW Business Rules, Spot Integration, and Capstone Leadership",
           status: "completed",
           tags: ["DRW AMS", "MCW", "Boston Dynamics", "Capstone", "Oracle EPM", "Groovy"],
-          mainFocus: "I expanded across both Oracle Managed Services and Implementation work — building multiple Oracle EPM business rules for MCW, completing YOLO testing and full Spot integration, and continuing to lead the capstone project.",
+          mainFocus: "I expanded across both Oracle Managed Services and Implementation work: building multiple Oracle EPM business rules for MCW, completing YOLO testing and full Spot integration, and continuing to lead the capstone project.",
 
           accomplishments: [
             "Completed the Intern10 Situational Role Play reflection and documented key takeaways",
@@ -750,13 +750,14 @@ const internshipData = {
 
           links: [
             {
-              label: "Dev Club IBM — Spot Dog-toy Detection",
+              label: "Dev Club IBM: Spot Dog-toy Detection",
               url: "https://www.youtube.com/watch?v=ba-QHNwbSI4",
               thumbnail: "https://img.youtube.com/vi/ba-QHNwbSI4/maxresdefault.jpg"
             },
             {
-              label: "Watch the IBM Capstone Video — NEXUS (Dallas Team 2)",
-              url: "https://ibm-my.sharepoint.com/personal/agnes_mathew_ibm_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fagnes%5Fmathew%5Fibm%5Fcom%2FDocuments%2FVideos%2FClipchamp%2FVideo%20Project%2FExports%2FIntern%20Capstone%20Project%20%2D%20Dallas%20Team%202%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eab906fab%2Da11d%2D461e%2Da351%2D710967c4f843&ga=1"
+              label: "Watch the IBM Capstone Video: NEXUS (Dallas Team 2)",
+              url: "https://ibm-my.sharepoint.com/personal/agnes_mathew_ibm_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fagnes%5Fmathew%5Fibm%5Fcom%2FDocuments%2FVideos%2FClipchamp%2FVideo%20Project%2FExports%2FIntern%20Capstone%20Project%20%2D%20Dallas%20Team%202%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eab906fab%2Da11d%2D461e%2Da351%2D710967c4f843&ga=1",
+              thumbnail: "Rohan/Assets Week 6/week6-05.png"
             }
           ],
 

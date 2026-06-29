@@ -1,5 +1,5 @@
 /* =========================================================
-   Rohan — IBM Internship · interaction layer
+   Rohan: IBM Internship · interaction layer
    Data-driven from data/internshipData.js.
    Upcoming weeks light up automatically once their data lands.
    ========================================================= */
@@ -40,41 +40,41 @@ function hydrateIcons(root = document) {
 
 /* ---------- Asset map (mirrors files under /Rohan) ---------- */
 const ASSETS = {
-  1: [{ name: 'Week 1 Program Schedule', path: 'Rohan/Assets Week 1/week1-01.png' }],
+  1: [{ name: 'Week 1 Program Schedule', path: 'Rohan/Assets Week 1/week1-01.png', proj: 'learning' }],
   2: [
-    { name: 'Cash Flow Forecasting Flowchart', path: 'Rohan/Assets Week 2/week2-01.png' },
-    { name: 'Raw Fisheye Camera Capture', path: 'Rohan/Assets Week 2/week2-02.png' },
-    { name: 'Image Labeling in labelImg', path: 'Rohan/Assets Week 2/week2-03.png' },
-    { name: 'Training Topics List', path: 'Rohan/Assets Week 2/week2-04.png' },
-    { name: 'Intern10 Exercise Guide', path: 'Rohan/Assets Week 2/week2-05.png' },
+    { name: 'Cash Flow Forecasting Flowchart', path: 'Rohan/Assets Week 2/week2-01.png', proj: 'oracle' },
+    { name: 'Raw Fisheye Camera Capture', path: 'Rohan/Assets Week 2/week2-02.png', proj: 'boston' },
+    { name: 'Image Labeling in labelImg', path: 'Rohan/Assets Week 2/week2-03.png', proj: 'boston' },
+    { name: 'Training Topics List', path: 'Rohan/Assets Week 2/week2-04.png', proj: 'learning' },
+    { name: 'Intern10 Exercise Guide', path: 'Rohan/Assets Week 2/week2-05.png', proj: 'learning' },
   ],
   3: [
-    { name: 'YOLO Training Log', path: 'Rohan/Assets Week 3/week3-01.png' },
-    { name: 'YOLO Training Script', path: 'Rohan/Assets Week 3/week3-02.png' },
-    { name: 'VOC Annotation File', path: 'Rohan/Assets Week 3/week3-03.png' },
-    { name: 'Training Results Curves', path: 'Rohan/Assets Week 3/week3-04.png' },
-    { name: 'Dogtoy Detection Results', path: 'Rohan/Assets Week 3/week3-05.jpg' },
+    { name: 'YOLO Training Log', path: 'Rohan/Assets Week 3/week3-01.png', proj: 'boston' },
+    { name: 'YOLO Training Script', path: 'Rohan/Assets Week 3/week3-02.png', proj: 'boston' },
+    { name: 'VOC Annotation File', path: 'Rohan/Assets Week 3/week3-03.png', proj: 'boston' },
+    { name: 'Training Results Curves', path: 'Rohan/Assets Week 3/week3-04.png', proj: 'boston' },
+    { name: 'Dogtoy Detection Results', path: 'Rohan/Assets Week 3/week3-05.jpg', proj: 'boston' },
   ],
   4: [
-    { name: 'PCF Business Rule Script', path: 'Rohan/Assets Week 4/week4-01.png' },
-    { name: 'Dataset Label Distribution', path: 'Rohan/Assets Week 4/week4-02.png' },
-    { name: 'Normalized Confusion Matrix', path: 'Rohan/Assets Week 4/week4-03.png' },
-    { name: 'Cash Flow Test Report', path: 'Rohan/Assets Week 4/week4-04.png' },
-    { name: 'Report Grid Definition', path: 'Rohan/Assets Week 4/week4-05.png' },
+    { name: 'PCF Business Rule Script', path: 'Rohan/Assets Week 4/week4-01.png', proj: 'oracle' },
+    { name: 'Dataset Label Distribution', path: 'Rohan/Assets Week 4/week4-02.png', proj: 'boston' },
+    { name: 'Normalized Confusion Matrix', path: 'Rohan/Assets Week 4/week4-03.png', proj: 'boston' },
+    { name: 'Cash Flow Test Report', path: 'Rohan/Assets Week 4/week4-04.png', proj: 'oracle' },
+    { name: 'Report Grid Definition', path: 'Rohan/Assets Week 4/week4-05.png', proj: 'oracle' },
   ],
   5: [
-    { name: 'PCF Cash Flow Dashboard', path: 'Rohan/Assets Week 5/week5-01.png' },
-    { name: 'SOFR Loan Business Rule', path: 'Rohan/Assets Week 5/week5-02.png' },
-    { name: 'Oracle EPM AI Agent Interface', path: 'Rohan/Assets Week 5/week5-03.png' },
-    { name: 'EPM Copilot Deployment Setup', path: 'Rohan/Assets Week 5/week5-04.png' },
-    { name: 'Intern Presentation Feedback Form', path: 'Rohan/Assets Week 5/week5-05.png' },
+    { name: 'PCF Cash Flow Dashboard', path: 'Rohan/Assets Week 5/week5-01.png', proj: 'oracle' },
+    { name: 'SOFR Loan Business Rule', path: 'Rohan/Assets Week 5/week5-02.png', proj: 'oracle' },
+    { name: 'Oracle EPM AI Agent Interface', path: 'Rohan/Assets Week 5/week5-03.png', proj: 'oracle' },
+    { name: 'EPM Copilot Deployment Setup', path: 'Rohan/Assets Week 5/week5-04.png', proj: 'oracle' },
+    { name: 'Intern Presentation Feedback Form', path: 'Rohan/Assets Week 5/week5-05.png', proj: 'learning' },
   ],
   6: [
-    { name: 'Oracle EPM Admin Navigator', path: 'Rohan/Assets Week 6/week6-01.png' },
-    { name: 'Oracle EPM AI Desktop App', path: 'Rohan/Assets Week 6/week6-02.png' },
-    { name: 'Custom Cashflow Forecast Dashboard 2.0', path: 'Rohan/Assets Week 6/week6-03.png' },
-    { name: 'Boston Dynamics Spot DevCon Presentation', path: 'Rohan/Assets Week 6/week6-04.png' },
-    { name: 'IBM Capstone: NEXUS Presentation', path: 'Rohan/Assets Week 6/week6-05.png' },
+    { name: 'Oracle EPM Admin Navigator', path: 'Rohan/Assets Week 6/week6-01.png', proj: 'oracle' },
+    { name: 'Oracle EPM AI Desktop App', path: 'Rohan/Assets Week 6/week6-02.png', proj: 'oracle' },
+    { name: 'Custom Cashflow Forecast Dashboard 2.0', path: 'Rohan/Assets Week 6/week6-03.png', proj: 'oracle' },
+    { name: 'Boston Dynamics Spot DevCon Presentation', path: 'Rohan/Assets Week 6/week6-04.png', proj: 'boston' },
+    { name: 'IBM Capstone: NEXUS Presentation', path: 'Rohan/Assets Week 6/week6-05.png', proj: 'capstone' },
   ],
 };
 const getAssets = wk => ASSETS[wk] || [];
@@ -82,7 +82,7 @@ const getAssets = wk => ASSETS[wk] || [];
 /* ---------- Curated workstreams ---------- */
 const WORKSTREAMS = [
   {
-    key: FEATURED, icon: 'chart', name: 'MCW — Oracle EPM Implementation',
+    key: FEATURED, icon: 'chart', name: 'MCW: Oracle EPM Implementation',
     role: 'Main workstream · Implementation', feature: true,
     desc: 'My primary track: a live Oracle EPM implementation for client MCW. I mapped the end-to-end process, wrote forecasting business rules in Groovy, built a custom Dashboard 2.0 with tabbed navigation, and architected an AI agent chat platform on top of the EPM data.',
     tech: ['Oracle EPM', 'Groovy', 'Planning', 'Dashboard 2.0', 'ICA API', 'RAG', 'MCP'],
@@ -91,28 +91,28 @@ const WORKSTREAMS = [
   {
     key: 'Boston Dynamics Spot', icon: 'bot', name: 'Boston Dynamics Spot',
     role: 'Computer vision & robotics',
-    desc: 'Trained a YOLO11 model to detect a dog toy, then integrated it onto the Spot robot — movement control, a gRPC pipeline, multithreaded lock-free inference, a safety kill-switch, and a victory dance. Presented at DevCon and open-sourced the weights.',
+    desc: 'Trained a YOLO11 model to detect a dog toy, then integrated it onto the Spot robot: movement control, a gRPC pipeline, multithreaded lock-free inference, a safety kill-switch, and a victory dance. Presented at DevCon and open-sourced the weights.',
     tech: ['YOLO11', 'Python', 'OpenCV', 'gRPC', 'Spot SDK', 'Multithreading'],
     metrics: [{ n: '99.5%', l: 'mAP@50' }, { n: '898', l: 'Images labeled' }, { n: '70%+', l: 'Live confidence' }],
   },
   {
-    key: 'Capstone', icon: 'network', name: 'NEXUS — IBM Capstone',
+    key: 'Capstone', icon: 'network', name: 'NEXUS: IBM Capstone',
     role: 'Team lead',
     desc: 'Led the Dallas Team 2 capstone: NEXUS, an AI platform built on IBM Granite and ICA with RAG, cross-model support, and speech in/out. Set the architecture, organized the team, and submitted a full week early.',
     tech: ['IBM Granite', 'ICA', 'RAG', 'TTS / STT', 'Cross-model', 'GitHub'],
     metrics: [{ n: '1 wk', l: 'Early delivery' }, { n: 'Lead', l: 'Team role' }, { n: 'Voice', l: 'Speech in / out' }],
   },
   {
-    key: 'DRW AMS', icon: 'landmark', name: 'DRW — Oracle Managed Services',
+    key: 'DRW AMS', icon: 'landmark', name: 'DRW: Oracle Managed Services',
     role: 'AMS & client communication',
-    desc: 'Supported Oracle EPM managed services for client DRW — ticket management, client meetings, and delivering an executive-ready Oracle EPM presentation with cost and timeline analysis.',
+    desc: 'Supported Oracle EPM managed services for client DRW: ticket management, client meetings, and delivering an executive-ready Oracle EPM presentation with cost and timeline analysis.',
     tech: ['Oracle EPM', 'AMS', 'Ticketing', 'Client decks'],
     metrics: [{ n: 'Exec', l: 'EPM presentation' }, { n: 'Cost', l: '+ timeline research' }],
   },
   {
     key: '__foundations', icon: 'cap', name: 'Intern10 & Foundations',
     role: 'Onboarding · learning · networking',
-    desc: 'The base layer: onboarding, 186 IBM Learn modules, Oracle certifications, and all Intern10 networking interviews and deliverables — completed five weeks ahead of schedule.',
+    desc: 'The base layer: onboarding, 186 IBM Learn modules, Oracle certifications, and all Intern10 networking interviews and deliverables, completed five weeks ahead of schedule.',
     tech: ['IBM Learn', 'Oracle My Learn', 'Intern10'],
     metrics: [{ n: '57', l: 'Learning hours' }, { n: '186', l: 'Modules' }, { n: '8', l: 'Badges' }],
     flat: [
@@ -141,14 +141,18 @@ function weekSpan(key) {
   return ws.length === 1 ? `Week ${ws[0]}` : `Weeks ${Math.min(...ws)}–${Math.max(...ws)}`;
 }
 
-/* ---------- Timeline filters ---------- */
+/* ---------- Timeline filters ----------
+   proj      → asset tag used to pick project-specific screenshots
+   pwNames   → projectWork entry name(s) holding that project's weekly tasks
+   tech      → WORKSTREAMS index whose tech tags label the project
+   learning  → cross-cutting track sourced from each week's `training` list   */
 const FILTERS = [
-  { label: 'All', kw: null },
-  { label: 'Oracle EPM', kw: ['mcw', 'oracle', 'epm', 'groovy', 'dashboards'] },
-  { label: 'Boston Dynamics', kw: ['boston dynamics', 'yolo', 'ml training', 'devcon'] },
-  { label: 'Capstone', kw: ['capstone', 'rag', 'ai agent'] },
-  { label: 'DRW AMS', kw: ['drw ams'] },
-  { label: 'Learning', kw: ['onboarding', 'ibm learn', 'intern10', 'networking'] },
+  { label: 'All', proj: null },
+  { label: 'Oracle EPM', proj: 'oracle', pwNames: ['MCW Implementation'], tech: 0 },
+  { label: 'Boston Dynamics', proj: 'boston', pwNames: ['Boston Dynamics Spot'], tech: 1 },
+  { label: 'Capstone', proj: 'capstone', pwNames: ['Capstone'], tech: 2 },
+  { label: 'DRW AMS', proj: 'drw', pwNames: ['DRW AMS'], tech: 3 },
+  { label: 'Learning', proj: 'learning', learning: true, tech: 4 },
 ];
 
 /* =========================================================
@@ -157,9 +161,6 @@ const FILTERS = [
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('footer-role').textContent = person.role;
   document.getElementById('footer-week').textContent = completedWeeks.length;
-  renderHeroFigures();
-  renderStatStrip();
-  renderProgress();
   renderWorkstreams();
   renderFilters();
   renderJourney();
@@ -171,55 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initLightbox();
 });
-
-/* ---------- Hero figures ---------- */
-function renderHeroFigures() {
-  const m = person.totalMetrics || {};
-  const figs = [
-    { v: `${completedWeeks.length}/${totalWeeks}`, l: 'Weeks documented' },
-    { v: WORKSTREAMS.length, l: 'Workstreams' },
-    { v: m.modulesCompleted ?? 0, l: 'IBM Learn modules' },
-    { v: m.learningHours ?? 0, l: 'Hours of self-learning' },
-  ];
-  document.getElementById('hero-figures').innerHTML = figs.map(f =>
-    `<div class="fig"><dt>${f.v}</dt><dd>${f.l}</dd></div>`).join('');
-}
-
-/* ---------- Overview: stat strip ---------- */
-function renderStatStrip() {
-  const m = person.totalMetrics || {};
-  const stats = [
-    { i: 'clock', n: m.learningHours ?? 0, l: 'Hours of self-learning' },
-    { i: 'book', n: m.modulesCompleted ?? 0, l: 'IBM Learn modules' },
-    { i: 'award', n: m.badgesEarned ?? 0, l: 'Badges & certifications' },
-    { i: 'image', n: 898, l: 'Images labeled for Spot' },
-  ];
-  document.getElementById('stat-strip').innerHTML = stats.map(s => `
-    <div class="stat">
-      <span class="stat-ico" data-icon="${s.i}"></span>
-      <span class="stat-num">${s.n}</span>
-      <span class="stat-label">${s.l}</span>
-    </div>`).join('');
-}
-
-/* ---------- Overview: progress ---------- */
-function renderProgress() {
-  const done = completedWeeks.length;
-  const ratio = done / totalWeeks;
-  document.getElementById('progress-block').innerHTML = `
-    <div class="pb-top">
-      <h3>Weeks documented</h3>
-      <div class="pb-count"><b>${done}</b> / ${totalWeeks}</div>
-    </div>
-    <div class="pb-bar"><span class="pb-fill" id="pb-fill"></span></div>
-    <div class="pb-ticks"><span>${done} completed</span><span>${totalWeeks - done} upcoming</span></div>
-    <p class="pb-note">Each completed week is logged in full — accomplishments, projects, deliverables, screenshots, and a reflection. The remaining weeks fill in as the internship continues.</p>`;
-  const fill = document.getElementById('pb-fill');
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { fill.style.transform = `scaleX(${ratio})`; io.disconnect(); }
-  }), { threshold: .3 });
-  io.observe(fill);
-}
 
 /* ---------- Work ---------- */
 function renderWorkstreams() {
@@ -251,51 +203,94 @@ function renderFilters() {
   document.querySelectorAll('.filter-btn').forEach(b => b.addEventListener('click', () => {
     activeFilter = +b.dataset.f;
     document.querySelectorAll('.filter-btn').forEach(x => x.classList.toggle('active', x === b));
-    applyFilter();
+    renderJourney();
   }));
-}
-function applyFilter() {
-  const f = FILTERS[activeFilter];
-  document.querySelectorAll('.j-item').forEach(item => {
-    if (!f.kw) { item.classList.remove('hide'); return; }
-    const tags = (item.dataset.tags || '').toLowerCase();
-    item.classList.toggle('hide', !f.kw.some(k => tags.includes(k)));
-  });
 }
 
 /* ---------- Journey ---------- */
 function renderJourney() {
-  document.getElementById('journey-list').innerHTML = allWeeks.map(w => {
-    const pending = w.status !== 'completed';
-    if (pending) return `
-      <li class="j-item pending" data-tags="">
-        <div class="j-aside">
-          <div class="j-wk-label">Week</div><div class="j-wk-num">${w.week}</div>
-          <div class="j-status"><span class="dot"></span>Upcoming</div>
-        </div>
-        <div><div class="j-title">Coming soon</div><p class="j-pending-text">This week hasn't been logged yet — check back as the internship continues.</p></div>
-      </li>`;
-    const shots = getAssets(w.week);
-    return `
-      <li class="j-item" data-tags="${w.tags.join(' ')}">
-        <div class="j-aside">
-          <div class="j-wk-label">Week</div><div class="j-wk-num">${w.week}</div>
-          <div class="j-status"><span class="dot"></span>Completed</div>
-        </div>
-        <button class="j-card" data-open="${w.week}" aria-label="Open Week ${w.week}">
-          <div class="j-title">${w.title}</div>
-          <p class="j-focus">${w.mainFocus}</p>
-          <div class="j-tags">${w.tags.slice(0, 6).map(t => `<span class="tag">${t}</span>`).join('')}</div>
-          ${quickStats(w)}
-          ${shots.length ? `<div class="j-thumbs">
-            ${shots.slice(0, 4).map(s => `<img src="${enc(s.path)}" alt="${s.name}" loading="lazy">`).join('')}
-            ${shots.length > 4 ? `<div class="more">+${shots.length - 4}</div>` : ''}
-          </div>` : ''}
-          <span class="j-open">Read Week ${w.week} ${svg('arrow-right')}</span>
-        </button>
-      </li>`;
-  }).join('');
+  const f = FILTERS[activeFilter];
+  const list = document.getElementById('journey-list');
+  if (!f.proj) {
+    list.innerHTML = allWeeks.map((w, i) => fullWeekCard(w, i)).join('');
+  } else {
+    let i = 0;
+    const cards = [];
+    completedWeeks.forEach(w => {
+      const card = projectWeekCard(w, f, i);
+      if (card) { cards.push(card); i++; }
+    });
+    list.innerHTML = cards.length ? cards.join('')
+      : `<li class="j-empty">No ${f.label} work logged yet.</li>`;
+  }
   document.querySelectorAll('.j-card[data-open]').forEach(c => c.addEventListener('click', () => openWeek(+c.dataset.open)));
+}
+
+/* All view: the full week, every workstream and screenshot together. */
+function fullWeekCard(w, i = 0) {
+  const pending = w.status !== 'completed';
+  if (pending) return `
+    <li class="j-item pending" style="--i:${i}">
+      <div class="j-aside">
+        <div class="j-wk-label">Week</div><div class="j-wk-num">${w.week}</div>
+        <div class="j-status"><span class="dot"></span>Upcoming</div>
+      </div>
+      <div><div class="j-title">Coming soon</div><p class="j-pending-text">This week hasn't been logged yet; check back as the internship continues.</p></div>
+    </li>`;
+  const shots = getAssets(w.week);
+  return `
+    <li class="j-item" style="--i:${i}">
+      <div class="j-aside">
+        <div class="j-wk-label">Week</div><div class="j-wk-num">${w.week}</div>
+        <div class="j-status"><span class="dot"></span>Completed</div>
+      </div>
+      <button class="j-card" data-open="${w.week}" aria-label="Open Week ${w.week}">
+        <div class="j-title">${w.title}</div>
+        <p class="j-focus">${w.mainFocus}</p>
+        <div class="j-tags">${w.tags.slice(0, 6).map(t => `<span class="tag">${t}</span>`).join('')}</div>
+        ${quickStats(w)}
+        ${thumbStrip(shots)}
+        <span class="j-open">Read Week ${w.week} ${svg('arrow-right')}</span>
+      </button>
+    </li>`;
+}
+
+/* Project view: only this project's tasks and screenshots for the week.
+   Weeks with no work on the project are dropped entirely. */
+function projectWeekCard(w, f, i = 0) {
+  const tasks = f.learning
+    ? (w.training || []).filter(t => t && t !== 'To be updated.')
+    : (w.projectWork || [])
+        .filter(p => p && typeof p === 'object' && f.pwNames.includes(p.name))
+        .flatMap(p => p.tasks || []);
+  const shots = getAssets(w.week).filter(s => s.proj === f.proj);
+  if (!tasks.length && !shots.length) return '';
+  const tech = (WORKSTREAMS[f.tech] || {}).tech || [];
+  return `
+    <li class="j-item" style="--i:${i}">
+      <div class="j-aside">
+        <div class="j-wk-label">Week</div><div class="j-wk-num">${w.week}</div>
+        <div class="j-status"><span class="dot"></span>Completed</div>
+      </div>
+      <button class="j-card" data-open="${w.week}" aria-label="Open Week ${w.week}">
+        <div class="j-title">${w.title}</div>
+        ${tasks.length ? `<ul class="j-tasks">
+          ${tasks.slice(0, 5).map(t => `<li>${t}</li>`).join('')}
+          ${tasks.length > 5 ? `<li class="j-tasks-more">+${tasks.length - 5} more this week</li>` : ''}
+        </ul>` : ''}
+        ${tech.length ? `<div class="j-tags">${tech.slice(0, 6).map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+        ${thumbStrip(shots)}
+        <span class="j-open">Read Week ${w.week} ${svg('arrow-right')}</span>
+      </button>
+    </li>`;
+}
+
+function thumbStrip(shots) {
+  if (!shots.length) return '';
+  return `<div class="j-thumbs">
+    ${shots.slice(0, 4).map(s => `<img src="${enc(s.path)}" alt="${s.name}" loading="lazy">`).join('')}
+    ${shots.length > 4 ? `<div class="more">+${shots.length - 4}</div>` : ''}
+  </div>`;
 }
 function quickStats(w) {
   const m = w.metrics || {}, picks = [];
@@ -345,7 +340,7 @@ function renderMedia() {
 }
 
 /* =========================================================
-   MODAL — week + workstream detail
+   MODAL: week + workstream detail
    ========================================================= */
 function initModal() {
   const modal = document.getElementById('modal');

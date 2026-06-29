@@ -1,5 +1,5 @@
 /* =========================================================
-   Rohan — IBM Internship
+   Rohan: IBM Internship
    Editorial white. One accent. Hairlines. No gradients.
    ========================================================= */
 
@@ -216,6 +216,16 @@ em { font-style: italic; }
 .j-item { display: grid; grid-template-columns: 132px 1fr; gap: 28px; padding: 34px 0; border-top: 1px solid var(--line); }
 .j-item:first-child { border-top: 0; }
 .j-item.hide { display: none; }
+
+/* Cards fade + rise in, staggered. Re-renders on every filter switch,
+   so changing tabs replays the flow. */
+@keyframes jIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.j-item { animation: jIn .5s var(--ease) both; animation-delay: calc(min(var(--i, 0), 8) * 65ms); }
+.j-item .j-tags .tag,
+.j-item .j-thumbs > * { animation: jIn .45s var(--ease) both; animation-delay: calc(min(var(--i, 0), 8) * 65ms + 120ms); }
+@media (prefers-reduced-motion: reduce) {
+  .j-item, .j-item .j-tags .tag, .j-item .j-thumbs > * { animation: none; }
+}
 .j-aside { position: relative; }
 .j-wk-label { font-size: 11.5px; color: var(--muted); }
 .j-wk-num { font-family: var(--serif); font-size: 3.4rem; line-height: 1; font-variant-numeric: tabular-nums; }
@@ -229,6 +239,10 @@ em { font-style: italic; }
 .j-title { font-family: var(--serif); font-size: clamp(1.4rem, 2.5vw, 1.9rem); line-height: 1.12; letter-spacing: -0.01em; transition: color .15s var(--ease); text-wrap: balance; }
 .j-card:hover .j-title { color: var(--accent); }
 .j-focus { margin-top: 12px; color: var(--ink-soft); font-size: 1rem; max-width: 64ch; text-wrap: pretty; }
+.j-tasks { list-style: none; margin-top: 14px; padding-left: 0; max-width: 64ch; display: grid; gap: 8px; color: var(--ink-soft); font-size: 0.97rem; }
+.j-tasks li { position: relative; padding-left: 22px; text-wrap: pretty; }
+.j-tasks-more { color: var(--muted); font-size: 12.5px; }
+.j-empty { color: var(--muted); padding: 34px 0; }
 .j-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
 .j-stats { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 18px; }
 .j-stat b { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; font-variant-numeric: tabular-nums; }
@@ -328,8 +342,15 @@ em { font-style: italic; }
 .mb-sec h4 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
 .mb-sec h4::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 .mb-list { list-style: none; display: grid; gap: 10px; }
-.mb-list li { position: relative; padding-left: 24px; font-size: .98rem; color: var(--ink-soft); text-wrap: pretty; }
-.mb-list li::before { content: ''; position: absolute; left: 2px; top: 10px; width: 8px; height: 1.5px; background: var(--accent); }
+.mb-list li { position: relative; padding-left: 22px; font-size: .98rem; color: var(--ink-soft); text-wrap: pretty; }
+
+/* One dash for every bullet list, same size and position everywhere */
+.mb-list li::before,
+.mb-proj li::before,
+.j-tasks li:not(.j-tasks-more)::before {
+  content: ''; position: absolute; left: 0; top: 0.62em;
+  width: 9px; height: 1.5px; border-radius: 1px; background: var(--accent);
+}
 
 .mb-projects { display: grid; gap: 14px; }
 .mb-proj { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 22px; background: var(--bg-2); }
@@ -338,7 +359,6 @@ em { font-style: italic; }
 .mb-proj .feat-badge { font-family: var(--sans); font-size: 10.5px; font-weight: 600; padding: 3px 8px; border-radius: 6px; background: var(--accent); color: #fff; }
 .mb-proj ul { list-style: none; display: grid; gap: 8px; }
 .mb-proj li { position: relative; padding-left: 22px; font-size: .92rem; color: var(--ink-soft); }
-.mb-proj li::before { content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 1.5px; background: var(--accent); }
 
 .mb-shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
 .mb-shot { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; cursor: pointer; aspect-ratio: 4/3; background: var(--bg-2); }
