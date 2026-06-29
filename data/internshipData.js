@@ -633,9 +633,146 @@ const internshipData = {
           assets: []
         },
 
-        // Weeks 6-9: Placeholder structure
-        ...Array.from({ length: 4 }, (_, i) => ({
-          week: i + 6,
+        {
+          week: 6,
+          title: "MCW EPM Dashboards & Navigation, EPM AI Desktop App, Spot at DevCon, and Capstone Submission",
+          status: "completed",
+          tags: ["MCW", "Oracle EPM", "Dashboards", "AI Agent", "Groovy", "Boston Dynamics", "DevCon", "Capstone"],
+          mainFocus: "Rohan advanced MCW Implementation by building custom Oracle EPM dashboards, a tabbed navigation flow, and a new SOFR loan business rule, while extending the Oracle EPM AI desktop application. He presented the Boston Dynamics Spot computer vision system at DevCon, open-sourced the trained model, finished all Intern 10 tasks five weeks early, and submitted the IBM Capstone one week ahead of schedule.",
+
+          accomplishments: [
+            "Continued building Predictive Cash Forecasting (PCF) dashboards using the PCF Business Solution",
+            "Created a custom Oracle EPM Dashboard 2.0 to visualize forecasting data and business rule outputs",
+            "Built a custom Navigation Flow with navigation cards and tabbed pages for streamlined dashboard access",
+            "Enhanced the Oracle EPM AI desktop application with CSV export, column sorting, and real-time table search/filter",
+            "Developed a new Oracle EPM business rule for SOFR loan percentage population",
+            "Architected an AI-powered Oracle EPM chat interface and connected ICA API keys for secure, private interactions",
+            "Added Skills, Bookmarks, Projects, Confidence Scoring, customizable agents, MCP integration, and file attachment support",
+            "Deployed the desktop application locally and completed end-to-end testing",
+            "Presented the Boston Dynamics Spot computer vision and ML implementation to IBM interns and at DevCon",
+            "Demonstrated autonomous dog toy detection, retrieval, and victory dance live, consistently above 70% detection confidence",
+            "Open-sourced the trained YOLO model weights and project resources for reuse on other Spot robots",
+            "Completed all Intern 10 tasks five weeks ahead of schedule",
+            "Submitted the IBM Capstone (NEXUS) one week ahead of schedule and led the team to final delivery"
+          ],
+
+          meetings: [
+            { name: "Parker", purpose: "Daily Oracle EPM implementation concept reviews" },
+            { name: "MCW Project Team", purpose: "Daily implementation standups" },
+            { name: "Rahul", purpose: "Development environment and IDE configuration support" },
+            { name: "DRW Buddy & Project Manager", purpose: "AMS action items and questions" },
+            { name: "Capstone Mentor", purpose: "Final progress review and feedback" },
+            { name: "Capstone Team", purpose: "Final video review and submission coordination" }
+          ],
+
+          training: [
+            "Functional Consultant Pyramid Speaking Framework",
+            "Oracle EPM Security, including User and Group read/write access management",
+            "Groovy scripting documentation for business rule development",
+            "Oracle EPM Dashboard 2.0 and Navigation Flow design",
+            "Oracle EPM implementation concepts (reviewed daily with Parker)"
+          ],
+
+          projectWork: [
+            {
+              name: "MCW Implementation",
+              tasks: [
+                "Continued building dashboards using the Predictive Cash Forecasting (PCF) Business Solution",
+                "Created a custom Oracle EPM Dashboard 2.0 to visualize forecasting data and business rules",
+                "Built a custom Navigation Flow with navigation cards and tabbed pages for streamlined dashboard access",
+                "Enhanced the Oracle EPM AI desktop app with CSV export, column sorting, and real-time table search/filter",
+                "Developed a new business rule for SOFR loan percentage population",
+                "Architected an AI-powered Oracle EPM chat interface and connected ICA API keys for secure, private interactions",
+                "Used an open-source chat framework to accelerate development",
+                "Added Skills, Bookmarks, Projects, Confidence Scoring, customizable agents, MCP integration, and file attachments",
+                "Deployed the application locally and completed end-to-end testing",
+                "Configured the development environment and IDE for Rahul",
+                "Attended daily implementation standups and met daily with Parker on Oracle EPM concepts",
+                "Learned Oracle EPM Security (user/group read/write access) and continued studying Groovy"
+              ]
+            },
+            {
+              name: "Boston Dynamics Spot",
+              tasks: [
+                "Presented the computer vision and machine learning implementation to IBM interns and at DevCon",
+                "Demonstrated autonomous dog toy detection, retrieval, and victory dance during live presentations",
+                "Created comprehensive documentation, setup guides, and reusable pipelines for future developers",
+                "Open-sourced the trained YOLO model weights and project resources for use on other Spot robots",
+                "Explained the end-to-end CV, ML, and software architecture, including model training, inference, and robot integration",
+                "Implemented and validated emergency kill-switch functionality to safely handle unexpected robot behavior",
+                "Consistently achieved over 70% confidence during live detection while distinguishing the target toy from similar pink objects",
+                "Implemented safety logic to automatically power down the robot when the target dog toy was not detected"
+              ]
+            },
+            {
+              name: "DRW AMS",
+              tasks: [
+                "Continued attending all non-conflicting client meetings, technical discussions, and knowledge-sharing sessions",
+                "Documented detailed notes and action items across sessions",
+                "Completed all Intern 10 tasks five weeks ahead of schedule",
+                "Met with Buddy and Project Manager to review action items and questions about AMS"
+              ]
+            },
+            {
+              name: "Capstone",
+              tasks: [
+                "Submitted the Capstone project one week ahead of schedule",
+                "Scheduled and led team meetings to review the final video and gather feedback",
+                "Met with the Capstone mentor to present progress and incorporate feedback into final deliverables",
+                "Coordinated with the Capstone Program Manager to confirm successful project submission",
+                "Continued serving as Team Lead, organizing meetings and ensuring milestones were met",
+                "Congratulated the team on the successful completion and delivery of the project"
+              ]
+            }
+          ],
+
+          technicalWork: [
+            "Custom Oracle EPM Dashboard 2.0 for forecasting and business rule visualization",
+            "Custom Navigation Flow with navigation cards and tabbed pages",
+            "Oracle EPM business rule for SOFR loan percentage population (Groovy)",
+            "Oracle EPM AI desktop application (CSV export, column sorting, real-time search/filter)",
+            "AI-powered Oracle EPM chat interface with ICA API key integration",
+            "Open-source chat framework extension (Skills, Bookmarks, Projects, Confidence Scoring, customizable agents, MCP, file attachments)",
+            "Local deployment and end-to-end testing of the desktop application",
+            "YOLO computer vision model for Boston Dynamics Spot (open-sourced weights)",
+            "Spot emergency kill-switch and auto power-down safety logic"
+          ],
+
+          deliverables: [
+            "Custom Oracle EPM Dashboard 2.0 and tabbed Navigation Flow",
+            "New Oracle EPM SOFR loan percentage business rule",
+            "Enhanced Oracle EPM AI desktop application (locally deployed and tested)",
+            "Boston Dynamics Spot DevCon presentation and live demonstration",
+            "Open-sourced YOLO model weights, documentation, and reusable pipelines",
+            "All Intern 10 tasks completed five weeks ahead of schedule",
+            "Final IBM Capstone (NEXUS) project submitted one week early"
+          ],
+
+          links: [
+            {
+              label: "Watch the IBM Capstone Video — NEXUS (Dallas Team 2)",
+              url: "https://ibm-my.sharepoint.com/personal/agnes_mathew_ibm_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fagnes%5Fmathew%5Fibm%5Fcom%2FDocuments%2FVideos%2FClipchamp%2FVideo%20Project%2FExports%2FIntern%20Capstone%20Project%20%2D%20Dallas%20Team%202%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eab906fab%2Da11d%2D461e%2Da351%2D710967c4f843&ga=1"
+            }
+          ],
+
+          metrics: {
+            businessRules: 1,
+            meetingsAttended: 6,
+            detectionConfidence: "70%+",
+            intern10: "5 weeks early",
+            capstoneSubmitted: "1 week early"
+          },
+
+          managerSummary: "During Week 6, Rohan deepened his MCW Implementation work by continuing to build Predictive Cash Forecasting dashboards, creating a custom Oracle EPM Dashboard 2.0 and a tabbed Navigation Flow, and developing a new business rule for SOFR loan percentage population. He extended the Oracle EPM AI desktop application with CSV export, column sorting, and real-time search/filter, and architected an AI-powered EPM chat interface connected to ICA API keys with Skills, Bookmarks, Projects, Confidence Scoring, customizable agents, MCP integration, and file attachments before deploying and testing it locally. He presented the Boston Dynamics Spot computer vision and ML implementation to IBM interns and at DevCon, demonstrating autonomous detection, retrieval, and a victory dance at over 70% confidence, and open-sourced the trained model for reuse. On DRW AMS he completed all Intern 10 tasks five weeks early, and he submitted the final IBM Capstone one week ahead of schedule while leading the team to delivery.",
+
+          reflection: "Week 6 brought several workstreams to a strong finish. On MCW I turned forecasting data into clear, navigable insight by building a custom Oracle EPM Dashboard 2.0 and a tabbed Navigation Flow, wrote a new SOFR loan business rule, and made the Oracle EPM AI desktop app genuinely usable with CSV export, sorting, and real-time search. Architecting the AI chat interface around ICA and adding Skills, Projects, MCP, and file attachments showed me how much thoughtful tooling can accelerate consultants. Presenting Boston Dynamics Spot at DevCon and open-sourcing the model let me share the full computer vision and robotics pipeline with others, and submitting the Capstone early as Team Lead capped off the work. This week tied together Oracle EPM implementation, AI tooling, robotics, and leadership.",
+
+          assets: []
+        },
+
+        // Weeks 7-9: Placeholder structure
+        ...Array.from({ length: 3 }, (_, i) => ({
+          week: i + 7,
           title: "To Be Updated",
           status: "pending",
           tags: ["To Be Updated"],

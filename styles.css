@@ -196,6 +196,23 @@ header h1 {
   color: #555;
 }
 
+/* Inline links (e.g. project / capstone videos) */
+.week-links li:before {
+  content: "▶";
+  font-size: 11px;
+  top: 8px;
+}
+
+.week-links a {
+  color: #0f62fe;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.week-links a:hover {
+  text-decoration: underline;
+}
+
 /* Project Cards */
 .project-grid {
   display: grid;

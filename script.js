@@ -155,6 +155,18 @@ function renderWeekContent(week) {
     }
   }
 
+  // Links (e.g. project / capstone videos)
+  if (week.links && week.links.length > 0) {
+    html += `
+      <h3>Watch &amp; Links</h3>
+      <ul class="week-links">
+        ${week.links.map(link => `
+          <li><a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label} &#8599;</a></li>
+        `).join('')}
+      </ul>
+    `;
+  }
+
   // Assets
   const assets = getAssets(week.week);
   if (assets.length > 0) {
@@ -208,6 +220,13 @@ function getAssets(weekNumber) {
         { name: 'Oracle EPM AI Agent Interface', path: 'Rohan/Assets Week 5/week5-03.png' },
         { name: 'EPM Copilot Deployment Setup', path: 'Rohan/Assets Week 5/week5-04.png' },
         { name: 'Intern Presentation Feedback Form', path: 'Rohan/Assets Week 5/week5-05.png' },
+      ],
+      6: [
+        { name: 'Oracle EPM Admin Navigator', path: 'Rohan/Assets Week 6/week6-01.png' },
+        { name: 'Oracle EPM AI Desktop App', path: 'Rohan/Assets Week 6/week6-02.png' },
+        { name: 'Custom Cashflow Forecast Dashboard 2.0', path: 'Rohan/Assets Week 6/week6-03.png' },
+        { name: 'Boston Dynamics Spot DevCon Presentation', path: 'Rohan/Assets Week 6/week6-04.png' },
+        { name: 'IBM Capstone: NEXUS Presentation', path: 'Rohan/Assets Week 6/week6-05.png' },
       ]
     }
   };
