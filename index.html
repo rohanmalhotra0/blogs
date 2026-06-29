@@ -1,54 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IBM Internship Tracker</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohan — IBM Internship</title>
+  <meta name="description" content="A documented field log of Rohan's IBM internship: Oracle EPM, Boston Dynamics Spot, the NEXUS AI capstone, and more.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <p class="eyebrow">IBM Internship</p>
-            <h1>Rohan's Internship Tracker</h1>
-            <p class="subtitle">A week-by-week log of progress, projects, and learning across the 9-week program.</p>
-            <nav class="view-nav">
-                <button class="view-btn active" data-view="timeline">Timeline</button>
-                <button class="view-btn" data-view="presentation">Presentation</button>
-            </nav>
-        </div>
-    </header>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-    <main class="container">
-        <div class="view" id="timeline-view">
-            <div id="mcw-spotlight"></div>
-            <div class="timeline" id="timeline">
-                <!-- Week posts will be generated here -->
-            </div>
-        </div>
-
-        <div class="view hidden" id="presentation-view">
-            <div class="deck" id="deck">
-                <div class="slide-stage" id="slide-stage"></div>
-                <div class="deck-controls">
-                    <button class="deck-btn" id="deck-prev" aria-label="Previous slide">&larr;</button>
-                    <div class="deck-dots" id="deck-dots"></div>
-                    <button class="deck-btn" id="deck-next" aria-label="Next slide">&rarr;</button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <div id="modal" class="modal hidden">
-        <div class="modal-backdrop" id="modal-backdrop"></div>
-        <div class="modal-content">
-            <button class="modal-close" id="modal-close">&times;</button>
-            <div id="modal-body"></div>
-        </div>
+  <!-- Top bar -->
+  <nav class="topbar" id="topbar">
+    <a class="brand" href="#top" aria-label="Home">
+      <span class="brand-mark">R</span>
+      <span class="brand-text">Rohan<span class="brand-sub">IBM Internship</span></span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="#overview" data-spy="overview">Overview</a>
+      <a href="#work" data-spy="work">Work</a>
+      <a href="#journey" data-spy="journey">Journey</a>
+      <a href="#gallery" data-spy="gallery">Gallery</a>
+      <a href="#media" data-spy="media">Media</a>
     </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" data-icon="menu"></button>
+  </nav>
 
-    <script src="data/internshipData.js"></script>
-    <script src="script.js"></script>
+  <!-- Hero -->
+  <header class="hero" id="top">
+    <div class="wrap">
+      <p class="hero-eyebrow">IBM Consulting · Summer Internship</p>
+      <h1 class="hero-title">
+        An internship spent building across <em>artificial intelligence, robotics,</em> and enterprise finance.
+      </h1>
+      <p class="hero-lede">
+        A week-by-week field log of my time at IBM — training a computer-vision model for
+        Boston Dynamics Spot, shipping Oracle EPM business rules for a live client, and leading
+        the NEXUS AI capstone team to an early delivery.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#journey">Read the journey <span class="ico" data-icon="arrow-right"></span></a>
+        <a class="btn btn-quiet" href="#work">View the work</a>
+      </div>
+      <dl class="hero-figures" id="hero-figures"><!-- JS --></dl>
+    </div>
+  </header>
+
+  <main>
+    <!-- Overview -->
+    <section class="section" id="overview">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-index">01</span>
+          <h2 class="sec-title">Overview</h2>
+          <p class="sec-lede">Six weeks in, the work spans five parallel workstreams. The numbers so far.</p>
+        </div>
+        <div class="stat-strip reveal" id="stat-strip"><!-- JS --></div>
+        <div class="progress-block reveal" id="progress-block"><!-- JS --></div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-index">02</span>
+          <h2 class="sec-title">The work</h2>
+          <p class="sec-lede">Five tracks, running in parallel. Select any to read the full breakdown.</p>
+        </div>
+        <div class="work-grid" id="work-grid"><!-- JS --></div>
+      </div>
+    </section>
+
+    <!-- Journey -->
+    <section class="section" id="journey">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-index">03</span>
+          <h2 class="sec-title">The journey</h2>
+          <p class="sec-lede">A living record. Filter by track, then open any week for the full account.</p>
+        </div>
+        <div class="filters reveal" id="filters"><!-- JS --></div>
+        <ol class="journey" id="journey-list"><!-- JS --></ol>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-index">04</span>
+          <h2 class="sec-title">From the work</h2>
+          <p class="sec-lede">Dashboards, model training, business rules, live demos. Select to enlarge.</p>
+        </div>
+        <div class="gallery" id="gallery-grid"><!-- JS --></div>
+      </div>
+    </section>
+
+    <!-- Media -->
+    <section class="section" id="media">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="sec-index">05</span>
+          <h2 class="sec-title">Demos &amp; talks</h2>
+          <p class="sec-lede">The robot, the capstone, and the moments worth pressing play on.</p>
+        </div>
+        <div class="media-grid" id="media-grid"><!-- JS --></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-name">Rohan</p>
+        <p class="footer-role" id="footer-role">IBM Intern</p>
+      </div>
+      <p class="footer-note">Documented through Week <span id="footer-week">6</span>. The record continues as the internship does.</p>
+    </div>
+  </footer>
+
+  <!-- Detail modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Detail">
+      <button class="modal-close" data-close aria-label="Close" data-icon="x"></button>
+      <div class="modal-scroll" id="modal-body"><!-- JS --></div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-btn lb-close" data-lb-close aria-label="Close" data-icon="x"></button>
+    <button class="lb-btn lb-prev" data-lb-prev aria-label="Previous image" data-icon="chevron-left"></button>
+    <figure class="lb-figure">
+      <img id="lb-img" src="" alt="">
+      <figcaption id="lb-caption"></figcaption>
+    </figure>
+    <button class="lb-btn lb-next" data-lb-next aria-label="Next image" data-icon="chevron-right"></button>
+  </div>
+
+  <script src="data/internshipData.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

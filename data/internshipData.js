@@ -37,7 +37,7 @@ const internshipData = {
           title: "Onboarding, Self-Learning, Networking, and Initial Interviews",
           status: "completed",
           tags: ["Onboarding", "IBM Learn", "Intern10", "Networking"],
-          mainFocus: "Rohan focused on completing onboarding, finishing IBM learning, attending meetings and trainings, and completing Intern10 networking interviews.",
+          mainFocus: "I focused on completing onboarding, finishing my IBM learning, attending meetings and trainings, and completing my Intern10 networking interviews.",
 
           accomplishments: [
             "Finished all onboarding requirements",
@@ -105,7 +105,7 @@ const internshipData = {
           title: "Oracle Training, DRW AMS, MCW Implementation, Spot, and Capstone Leadership",
           status: "completed",
           tags: ["Oracle", "DRW AMS", "MCW", "Boston Dynamics", "Capstone", "Intern10"],
-          mainFocus: "Rohan moved from onboarding into active project work. He started Intern10 project documentation, completed Oracle and IBM training, joined DRW AMS and MCW Implementation workstreams, began Boston Dynamics Spot ML work, and took a leadership role on the capstone project.",
+          mainFocus: "I moved from onboarding into active project work — starting Intern10 project documentation, completing Oracle and IBM training, joining the DRW AMS and MCW Implementation workstreams, beginning Boston Dynamics Spot ML work, and taking a leadership role on the capstone project.",
 
           accomplishments: [
             "Met with buddy, PM, and manager",
@@ -233,7 +233,7 @@ const internshipData = {
           title: "YOLO Model Training, DRW Shadowing, MCW Meetings, and Capstone MVP",
           status: "completed",
           tags: ["YOLO", "ML Training", "DRW AMS", "MCW", "Capstone", "RAG"],
-          mainFocus: "Rohan continued training and moved deeper into technical and project execution. He trained a YOLO model, documented the Spot ML repo, shadowed DRW meetings, joined MCW standups, and built the first version of the capstone demo.",
+          mainFocus: "I continued training and moved deeper into technical execution — training a YOLO model, documenting the Spot ML repo, shadowing DRW meetings, joining MCW standups, and building the first version of the capstone demo.",
 
           accomplishments: [
             "Continued completing Oracle and IBM training modules",
@@ -380,7 +380,7 @@ const internshipData = {
           title: "MCW Business Rules, Spot Integration, and Capstone Leadership",
           status: "completed",
           tags: ["DRW AMS", "MCW", "Boston Dynamics", "Capstone", "Oracle EPM", "Groovy"],
-          mainFocus: "Rohan expanded across both Oracle Managed Services and Implementation work. He built multiple Oracle EPM business rules for MCW, completed YOLO testing and full Spot integration, and continued leading the capstone project.",
+          mainFocus: "I expanded across both Oracle Managed Services and Implementation work — building multiple Oracle EPM business rules for MCW, completing YOLO testing and full Spot integration, and continuing to lead the capstone project.",
 
           accomplishments: [
             "Completed the Intern10 Situational Role Play reflection and documented key takeaways",
@@ -513,7 +513,7 @@ const internshipData = {
           title: "MCW EPM AI Agent, SOFR Business Rules, DRW Presentation, and Capstone Delivery",
           status: "completed",
           tags: ["MCW", "Oracle EPM", "AI Agent", "Groovy", "DRW AMS", "Boston Dynamics", "Capstone"],
-          mainFocus: "Rohan went deeper into MCW Implementation by building EPM dashboards, a new SOFR loan business rule, and architecting an Oracle EPM AI agent chat platform. He also delivered an Oracle EPM presentation for DRW AMS, advanced the Boston Dynamics Spot integration, and completed and submitted the IBM Capstone a week early.",
+          mainFocus: "I went deeper into MCW Implementation, building EPM dashboards, a new SOFR loan business rule, and architecting an Oracle EPM AI agent chat platform. I also delivered an Oracle EPM presentation for DRW AMS, advanced the Boston Dynamics Spot integration, and completed and submitted the IBM Capstone a week early.",
 
           accomplishments: [
             "Continued building Predictive Cash Forecasting (PCF) dashboards to understand reporting structure and forecasting workflows",
@@ -638,7 +638,7 @@ const internshipData = {
           title: "MCW EPM Dashboards & Navigation, EPM AI Desktop App, Spot at DevCon, and Capstone Submission",
           status: "completed",
           tags: ["MCW", "Oracle EPM", "Dashboards", "AI Agent", "Groovy", "Boston Dynamics", "DevCon", "Capstone"],
-          mainFocus: "Rohan advanced MCW Implementation by building custom Oracle EPM dashboards, a tabbed navigation flow, and a new SOFR loan business rule, while extending the Oracle EPM AI desktop application. He presented the Boston Dynamics Spot computer vision system at DevCon, open-sourced the trained model, finished all Intern 10 tasks five weeks early, and submitted the IBM Capstone one week ahead of schedule.",
+          mainFocus: "I advanced MCW Implementation by building custom Oracle EPM dashboards, a tabbed navigation flow, and a new SOFR loan business rule, while extending the Oracle EPM AI desktop application. I presented the Boston Dynamics Spot computer-vision system at DevCon, open-sourced the trained model, finished all Intern 10 tasks five weeks early, and submitted the IBM Capstone one week ahead of schedule.",
 
           accomplishments: [
             "Continued building Predictive Cash Forecasting (PCF) dashboards using the PCF Business Solution",
