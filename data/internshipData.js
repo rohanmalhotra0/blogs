@@ -776,9 +776,198 @@ const internshipData = {
           assets: []
         },
 
-        // Weeks 7-9: Placeholder structure
-        ...Array.from({ length: 3 }, (_, i) => ({
-          week: i + 7,
+        {
+          week: 7,
+          title: "Perpetual Day-of-Week Driver, Local AI Fine-Tuning, and DRW Support",
+          status: "completed",
+          tags: ["MCW", "Oracle EPM", "Groovy", "Calc Scripts", "DRW AMS", "QLoRA", "Fine-Tuning", "RAG"],
+          mainFocus: "I went deeper into Oracle EPM implementation engineering by building a perpetual day-of-week driver with custom calculation scripts, stood up a local AI workstation to fine-tune open-source models with QLoRA, and continued supporting DRW AMS while researching how enterprise AI could accelerate Oracle EPM consulting.",
+
+          accomplishments: [
+            "Designed and implemented a perpetual day-of-week driver for Oracle EPM Daily Planning applications using custom calculation scripts",
+            "Developed logic to correctly handle leap year and non-leap year scenarios while maintaining date alignment across fiscal years",
+            "Researched Oracle Planning date dimension behavior and optimized calculations to improve maintainability and accuracy",
+            "Continued enhancing the Oracle EPM AI desktop application with improved retrieval, navigation, and Oracle-specific knowledge management",
+            "Installed and configured an Intel Arc Pro B70 development workstation for local AI research and model experimentation",
+            "Validated Intel GPU training workflows and executed local fine-tuning workloads using QLoRA techniques",
+            "Trained and evaluated open-source coding models to assess applicability for Oracle EPM automation and consulting workflows",
+            "Researched retrieval-augmented generation (RAG), model fine-tuning, and local inference architectures for enterprise knowledge systems",
+            "Assisted with troubleshooting Oracle Planning forms, business rules, and forecasting-related issues on DRW AMS"
+          ],
+
+          meetings: [
+            { name: "Parker", purpose: "Calculation script design patterns, forecasting methodologies, and Oracle EPM best practices" },
+            { name: "MCW Project Team", purpose: "Daily implementation standups and solution design discussions" },
+            { name: "DRW Team", purpose: "Client meetings, technical discussions, and AMS knowledge-sharing" },
+            { name: "IBM Professionals & Mentors", purpose: "Technical career paths, consulting opportunities, and software engineering roles" }
+          ],
+
+          training: [
+            "Oracle Planning date dimension behavior and calculation script design",
+            "Oracle Planning metadata, substitution variables, and dynamic forecasting configurations",
+            "QLoRA fine-tuning and local GPU training workflows",
+            "Retrieval-augmented generation (RAG) and local inference architectures",
+            "Self-study in Oracle Planning, Groovy scripting, and AI-assisted development"
+          ],
+
+          projectWork: [
+            {
+              name: "MCW Implementation",
+              tasks: [
+                "Designed and implemented a perpetual day-of-week driver for Daily Planning applications using custom calculation scripts",
+                "Developed logic to handle leap year and non-leap year scenarios while maintaining date alignment across fiscal years",
+                "Researched Oracle Planning date dimension behavior and optimized calculations for maintainability and accuracy",
+                "Continued enhancing the Oracle EPM AI desktop application with improved retrieval, navigation, and knowledge management",
+                "Expanded understanding of Oracle Planning metadata, substitution variables, and dynamic forecasting configurations",
+                "Participated in daily implementation standups and solution design discussions with the project team",
+                "Collaborated with Parker to review calculation script design patterns and Oracle EPM best practices"
+              ]
+            },
+            {
+              name: "DRW AMS",
+              tasks: [
+                "Continued attending client meetings, technical discussions, and AMS knowledge-sharing sessions",
+                "Assisted with troubleshooting Oracle Planning forms, business rules, and forecasting-related issues",
+                "Expanded knowledge of Oracle EPM support processes, environment management, and production issue resolution",
+                "Continued documenting meeting notes, action items, and technical observations to support ongoing learning"
+              ]
+            },
+            {
+              name: "AI / Technical Innovation",
+              tasks: [
+                "Installed and configured an Intel Arc Pro B70 development workstation for local AI research and model experimentation",
+                "Validated Intel GPU training workflows and successfully executed local fine-tuning workloads using QLoRA techniques",
+                "Trained and evaluated open-source coding models for Oracle EPM automation and consulting workflows",
+                "Researched RAG, model fine-tuning, and local inference architectures for enterprise knowledge systems",
+                "Investigated methods for integrating Oracle EPM implementation assets and business rules into AI-assisted consulting tools"
+              ]
+            }
+          ],
+
+          technicalWork: [
+            "Perpetual day-of-week driver via custom Oracle EPM calculation scripts",
+            "Leap year / non-leap year date alignment logic across fiscal years",
+            "Oracle Planning date dimension optimization",
+            "Intel Arc Pro B70 local AI workstation setup and GPU training validation",
+            "QLoRA fine-tuning of open-source coding models",
+            "RAG and local inference architecture research for enterprise knowledge systems"
+          ],
+
+          deliverables: [
+            "Perpetual day-of-week driver for Daily Planning applications",
+            "Leap year-aware date alignment calculation logic",
+            "Configured Intel Arc Pro B70 local AI workstation",
+            "Locally fine-tuned open-source coding model (QLoRA)",
+            "Research notes on RAG and local inference for Oracle EPM"
+          ],
+
+          metrics: {
+            businessRules: 1,
+            meetingsAttended: 4
+          },
+
+          managerSummary: "During Week 7, Rohan advanced his Oracle EPM implementation engineering by designing and implementing a perpetual day-of-week driver for Daily Planning applications using custom calculation scripts, including leap year and non-leap year handling to keep dates aligned across fiscal years. He continued enhancing the Oracle EPM AI desktop application and deepened his knowledge of Planning metadata, substitution variables, and dynamic forecasting. On the technical innovation side, he configured an Intel Arc Pro B70 workstation, validated Intel GPU training, and executed local QLoRA fine-tuning on open-source coding models while researching RAG and local inference architectures for enterprise knowledge systems. He also supported DRW AMS by troubleshooting Planning forms, business rules, and forecasting issues, and met with IBM professionals to discuss technical career paths.",
+
+          reflection: "Week 7 was where my Oracle EPM work and my AI research started to meet. Building the perpetual day-of-week driver pushed me to really understand how Oracle Planning treats dates, including the edge cases around leap years and fiscal alignment, and to write calculation logic that stays maintainable. Standing up the Intel Arc Pro B70 workstation and running local QLoRA fine-tuning gave me hands-on experience with model training and made the idea of an Oracle EPM AI assistant feel achievable. Supporting DRW AMS in parallel kept me grounded in the realities of production support. This week helped me see a path where fine-tuned models and RAG could genuinely speed up implementation consulting.",
+
+          assets: []
+        },
+
+        {
+          week: 8,
+          title: "Dynamic Rolling 13-Day Forecast, SOFR Loan Solution, and Enterprise AI Assistant",
+          status: "completed",
+          tags: ["MCW", "Oracle EPM", "Forecasting", "SOFR", "Substitution Vars", "DRW AMS", "AI", "RAG"],
+          mainFocus: "I delivered a dynamic rolling 13-day forecast within Oracle Predictive Cash Forecasting, advanced the SOFR loan forecasting solution with interest accrual and balance logic, and kept building the local AI infrastructure and enterprise Oracle EPM assistant while supporting DRW AMS.",
+
+          accomplishments: [
+            "Successfully implemented a dynamic rolling 13-day forecast solution within Oracle Predictive Cash Forecasting",
+            "Researched Oracle substitution variables and forecast range configuration to support automated rolling forecast updates",
+            "Developed and tested dynamic date-range logic to automatically align forecast periods with current application settings",
+            "Validated forecasting outputs and resolved form configuration issues related to daily forecasting periods and reporting ranges",
+            "Continued the SOFR Loan forecasting solution, including interest accrual calculations, loan balance logic, and forecasting enhancements",
+            "Improved Oracle Planning forms, dashboards, and reporting views to increase usability and forecasting transparency",
+            "Continued development of an AI-powered Oracle EPM assistant leveraging implementation knowledge, business rules, and documentation",
+            "Built and tested local AI infrastructure for future Oracle EPM automation, documentation generation, and implementation assistance"
+          ],
+
+          meetings: [
+            { name: "Parker", purpose: "Troubleshooting forecasting calculations and optimizing Oracle EPM design decisions" },
+            { name: "MCW Project Team", purpose: "Daily implementation standups and forecasting solution reviews" },
+            { name: "DRW Team", purpose: "Client meetings and Oracle EPM support activities" }
+          ],
+
+          training: [
+            "Oracle substitution variables and forecast range configuration",
+            "Dynamic date-range logic for rolling forecasts",
+            "SOFR interest accrual and loan balance forecasting concepts",
+            "Scalable architectures for enterprise AI assistants",
+            "AI engineering, model deployment, and enterprise software architecture"
+          ],
+
+          projectWork: [
+            {
+              name: "MCW Implementation",
+              tasks: [
+                "Implemented a dynamic rolling 13-day forecast solution within Oracle Predictive Cash Forecasting",
+                "Researched Oracle substitution variables and forecast range configuration for automated rolling forecast updates",
+                "Developed and tested dynamic date-range logic to align forecast periods with current application settings",
+                "Validated forecasting outputs and resolved form configuration issues for daily forecasting periods and reporting ranges",
+                "Continued the SOFR Loan forecasting solution with interest accrual calculations and loan balance logic",
+                "Improved Oracle Planning forms, dashboards, and reporting views for usability and forecasting transparency",
+                "Worked closely with Parker to troubleshoot forecasting calculations and optimize Oracle EPM design decisions"
+              ]
+            },
+            {
+              name: "DRW AMS",
+              tasks: [
+                "Continued participating in client meetings and support activities across Oracle EPM environments",
+                "Expanded understanding of AMS operational processes, issue triage workflows, and client communication practices",
+                "Reviewed forecasting-related support requests and analyzed Oracle Planning configuration behavior"
+              ]
+            },
+            {
+              name: "AI / Technical Innovation",
+              tasks: [
+                "Continued development of an AI-powered Oracle EPM assistant leveraging implementation knowledge, business rules, and documentation",
+                "Evaluated approaches for combining retrieval systems, fine-tuning, and enterprise knowledge bases to improve EPM productivity",
+                "Built and tested local AI infrastructure for future Oracle EPM automation, documentation generation, and implementation assistance",
+                "Researched scalable architectures for enterprise AI assistants supporting Planning, Groovy scripting, and implementation consulting"
+              ]
+            }
+          ],
+
+          technicalWork: [
+            "Dynamic rolling 13-day forecast within Oracle Predictive Cash Forecasting",
+            "Substitution-variable-driven forecast range configuration",
+            "Dynamic date-range logic aligned to application settings",
+            "SOFR loan interest accrual and balance forecasting logic",
+            "Oracle Planning form, dashboard, and reporting view improvements",
+            "Local AI infrastructure and enterprise Oracle EPM assistant development"
+          ],
+
+          deliverables: [
+            "Dynamic rolling 13-day forecast solution (Predictive Cash Forecasting)",
+            "Automated forecast range configuration via substitution variables",
+            "Enhanced SOFR loan forecasting solution",
+            "Improved Oracle Planning forms, dashboards, and reporting views",
+            "Local AI infrastructure for an enterprise Oracle EPM assistant"
+          ],
+
+          metrics: {
+            businessRules: 2,
+            meetingsAttended: 3
+          },
+
+          managerSummary: "During Week 8, Rohan delivered a dynamic rolling 13-day forecast within Oracle Predictive Cash Forecasting, using substitution variables and dynamic date-range logic so forecast periods automatically align with current application settings. He validated forecasting outputs, resolved form configuration issues, and continued advancing the SOFR loan forecasting solution with interest accrual and loan balance logic while improving Planning forms, dashboards, and reporting views. He also continued building local AI infrastructure and an AI-powered Oracle EPM assistant that leverages implementation knowledge and documentation, researching scalable enterprise assistant architectures. In parallel he supported DRW AMS across client meetings and Oracle EPM support activities, and reflected on the internship to identify future growth in application development, data engineering, and AI-focused consulting.",
+
+          reflection: "Week 8 tied a lot of threads together. The rolling 13-day forecast was satisfying to deliver because it made the Predictive Cash Forecasting application update itself as the calendar moves, and getting there meant really understanding substitution variables and dynamic date ranges. Extending the SOFR loan solution with interest accrual and balance logic showed me how much financial nuance sits behind a forecasting model. At the same time, continuing to build local AI infrastructure and an Oracle EPM assistant made me confident that the automation ideas I had been researching are real and worth pursuing. Reflecting on the internship as a whole, I can see how Oracle EPM implementation, managed services, and AI engineering all connect into the kind of consulting work I want to keep doing.",
+
+          assets: []
+        },
+
+        {
+          week: 9,
           title: "To Be Updated",
           status: "pending",
           tags: ["To Be Updated"],
@@ -793,7 +982,7 @@ const internshipData = {
           managerSummary: "To be updated.",
           reflection: "To be updated.",
           assets: []
-        }))
+        }
       ]
     },
 

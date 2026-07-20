@@ -32,6 +32,10 @@ const ICON = {
   network: '<rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4"/><path d="M5 16v-1.5a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1V16"/>',
   landmark: '<line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 21 8 3 8"/>',
   cap: '<path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.6 3 6 3s6-2 6-3v-5"/><line x1="22" y1="10" x2="22" y2="15"/>',
+  cpu: '<rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5" rx="0.5"/><line x1="9" y1="2" x2="9" y2="6"/><line x1="15" y1="2" x2="15" y2="6"/><line x1="9" y1="18" x2="9" y2="22"/><line x1="15" y1="18" x2="15" y2="22"/><line x1="2" y1="9" x2="6" y2="9"/><line x1="2" y1="15" x2="6" y2="15"/><line x1="18" y1="9" x2="22" y2="9"/><line x1="18" y1="15" x2="22" y2="15"/>',
+  download: '<path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M4 21h16"/>',
+  file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>',
+  layers: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/>',
 };
 const svg = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICON[name] || ''}</svg>`;
 function hydrateIcons(root = document) {
@@ -110,6 +114,13 @@ const WORKSTREAMS = [
     metrics: [{ n: 'Exec', l: 'EPM presentation' }, { n: 'Cost', l: '+ timeline research' }],
   },
   {
+    key: 'AI / Technical Innovation', icon: 'cpu', name: 'AI / Technical Innovation',
+    role: 'Local AI · fine-tuning · RAG',
+    desc: 'A self-directed track: I stood up an Intel Arc Pro B70 workstation, fine-tuned open-source coding models locally with QLoRA, and researched RAG and local inference to architect an enterprise Oracle EPM AI assistant that turns implementation knowledge and business rules into on-demand answers.',
+    tech: ['QLoRA', 'Intel Arc GPU', 'Fine-Tuning', 'RAG', 'Local Inference', 'Oracle EPM'],
+    metrics: [{ n: 'QLoRA', l: 'Local fine-tuning' }, { n: 'Intel Arc', l: 'B70 workstation' }, { n: 'RAG', l: 'EPM assistant' }],
+  },
+  {
     key: '__foundations', icon: 'cap', name: 'Intern10 & Foundations',
     role: 'Onboarding · learning · networking',
     desc: 'The base layer: onboarding, 186 IBM Learn modules, Oracle certifications, and all Intern10 networking interviews and deliverables, completed five weeks ahead of schedule.',
@@ -152,7 +163,8 @@ const FILTERS = [
   { label: 'Boston Dynamics', proj: 'boston', pwNames: ['Boston Dynamics Spot'], tech: 1 },
   { label: 'Capstone', proj: 'capstone', pwNames: ['Capstone'], tech: 2 },
   { label: 'DRW AMS', proj: 'drw', pwNames: ['DRW AMS'], tech: 3 },
-  { label: 'Learning', proj: 'learning', learning: true, tech: 4 },
+  { label: 'AI Innovation', proj: 'ai', pwNames: ['AI / Technical Innovation'], tech: 4 },
+  { label: 'Learning', proj: 'learning', learning: true, tech: 5 },
 ];
 
 /* =========================================================
@@ -161,6 +173,7 @@ const FILTERS = [
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('footer-role').textContent = person.role;
   document.getElementById('footer-week').textContent = completedWeeks.length;
+  renderOverview();
   renderWorkstreams();
   renderFilters();
   renderJourney();
@@ -171,6 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initModal();
   initLightbox();
+  initOverviewMotion();
+  initExport();
 });
 
 /* ---------- Work ---------- */
@@ -337,6 +352,190 @@ function renderMedia() {
         <span class="media-link">Watch ${svg('arrow-up-right')}</span>
       </div>
     </a>`).join('');
+}
+
+/* =========================================================
+   OVERVIEW: at-a-glance stats, arc, track effort, outcomes
+   ========================================================= */
+const GAUGE_CIRC = 2 * Math.PI * 52; // r = 52 in the 120×120 viewBox
+
+function renderOverview() {
+  const tm = person.totalMetrics || {};
+  const done = completedWeeks.length;
+  const totalRules = completedWeeks.reduce((s, w) => s + (Number(w.metrics && w.metrics.businessRules) || 0), 0);
+
+  /* --- Stat strip --- */
+  const stats = [
+    { ico: 'clock', to: tm.learningHours || 57, label: 'Hours of self-driven learning' },
+    { ico: 'book', to: tm.modulesCompleted || 186, label: 'IBM Learn modules completed' },
+    { ico: 'award', to: tm.badgesEarned || 8, label: 'Badges & certifications' },
+    { ico: 'chart', to: tm.projectsActive || 5, label: 'Parallel workstreams' },
+  ];
+  document.getElementById('ov-strip').innerHTML = `<div class="stat-strip">${stats.map(s => `
+    <div class="stat">
+      <span class="stat-ico" data-icon="${s.ico}"></span>
+      <div class="stat-num count" data-to="${s.to}">0</div>
+      <div class="stat-label">${s.label}</div>
+    </div>`).join('')}</div>`;
+
+  /* --- Progress: weeks documented --- */
+  const pct = Math.round((done / totalWeeks) * 100);
+  document.getElementById('ov-progress').innerHTML = `
+    <div class="progress-block ov-card">
+      <div class="pb-top">
+        <h3>Weeks documented</h3>
+        <div class="pb-count"><b>${done}</b> / ${totalWeeks}</div>
+      </div>
+      <div class="pb-bar"><div class="pb-fill" style="--target:${pct}%"></div></div>
+      <div class="pb-ticks">${Array.from({ length: totalWeeks }, (_, i) => `<span>${i + 1}</span>`).join('')}</div>
+      <p class="pb-note">${done} weeks logged in full detail across ${person.totalMetrics.projectsActive || 5} workstreams — ${totalRules}+ Oracle EPM business rules shipped along the way. Intern10 was completed five weeks ahead of schedule.</p>
+    </div>`;
+
+  /* --- Internship arc --- */
+  const ARC = [
+    { n: 1, t: 'Onboard & learn', wk: 'Week 1', d: '57 hours across 186 IBM Learn modules, 8 badges, and every Intern10 networking interview.' },
+    { n: 2, t: 'Build for clients', wk: 'Weeks 2–5', d: 'Oracle EPM business rules, a YOLO11 model for Spot, and the NEXUS RAG platform as team lead.' },
+    { n: 3, t: 'Ship & present', wk: 'Week 6', d: 'Custom Dashboard 2.0, Spot demoed live at DevCon, and the Capstone submitted a week early.' },
+    { n: 4, t: 'Deepen & automate', wk: 'Weeks 7–8', d: 'Perpetual calc-script drivers, rolling forecasts, and local QLoRA fine-tuning for an EPM assistant.' },
+  ];
+  document.getElementById('ov-arc').innerHTML = `
+    <div class="ov-card arc-card">
+      <div class="ov-card-head"><span class="ov-eyebrow">The arc</span><h3>From onboarding to automation</h3></div>
+      <ol class="arc">
+        ${ARC.map(p => `
+          <li class="arc-step">
+            <div class="arc-node">${p.n}</div>
+            <div class="arc-body">
+              <div class="arc-top"><span class="arc-title">${p.t}</span><span class="arc-wk">${p.wk}</span></div>
+              <p class="arc-desc">${p.d}</p>
+            </div>
+          </li>`).join('')}
+      </ol>
+    </div>`;
+
+  /* --- Track effort (weeks active per workstream) --- */
+  const TRACKS = [
+    { key: 'MCW Implementation', label: 'Oracle EPM · MCW', note: '4+ business rules · Dashboard 2.0 · EPM AI agent' },
+    { key: 'DRW AMS', label: 'DRW Managed Services', note: 'Executive EPM deck · production support' },
+    { key: 'Boston Dynamics Spot', label: 'Boston Dynamics Spot', note: '99.5% mAP@50 · live DevCon demo' },
+    { key: 'Capstone', label: 'NEXUS Capstone', note: 'Team lead · delivered a week early' },
+    { key: 'AI / Technical Innovation', label: 'AI / Technical Innovation', note: 'QLoRA fine-tuning · RAG assistant' },
+    { key: '__foundations', label: 'Intern10 & foundations', note: 'Onboarding · 186 modules · networking' },
+  ].map(t => ({ ...t, weeks: t.key === '__foundations' ? done : aggregateProject(t.key).length }))
+   .filter(t => t.weeks > 0);
+  const maxW = Math.max(...TRACKS.map(t => t.weeks), 1);
+  document.getElementById('ov-tracks').innerHTML = `
+    <div class="ov-card">
+      <div class="ov-card-head"><span class="ov-eyebrow">Where the effort went</span><h3>Weeks active per track</h3></div>
+      <div class="track-bars">
+        ${TRACKS.map(t => `
+          <div class="tb-row">
+            <div class="tb-top"><span class="tb-label">${t.label}</span><span class="tb-weeks">${t.weeks} ${t.weeks === 1 ? 'wk' : 'wks'}</span></div>
+            <div class="tb-track"><div class="tb-fill" style="--target:${(t.weeks / maxW) * 100}%"></div></div>
+            <div class="tb-note">${t.note}</div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+
+  /* --- Signature outcomes + accuracy gauge --- */
+  const OUT = [
+    { to: 898, label: 'Images labeled for Spot' },
+    { to: 70, suffix: '%+', label: 'Live detection confidence' },
+    { to: 5, suffix: ' wks', label: 'Intern10 finished early' },
+    { to: 1, suffix: ' wk', label: 'Capstone delivered early' },
+  ];
+  document.getElementById('ov-outcomes').innerHTML = `
+    <div class="ov-card outcomes-card">
+      <div class="ov-card-head"><span class="ov-eyebrow">Signature outcomes</span><h3>What the work produced</h3></div>
+      <div class="outcomes">
+        <div class="gauge-wrap">
+          <svg class="gauge" viewBox="0 0 120 120" role="img" aria-label="99.5 percent mAP at 50">
+            <circle class="g-track" cx="60" cy="60" r="52"/>
+            <circle class="g-arc" cx="60" cy="60" r="52" stroke-dasharray="${GAUGE_CIRC.toFixed(1)}" stroke-dashoffset="${GAUGE_CIRC.toFixed(1)}"/>
+          </svg>
+          <div class="gauge-center"><b class="count" data-to="99.5" data-dec="1">0</b><span>mAP@50</span></div>
+        </div>
+        <div class="outcome-grid">
+          ${OUT.map(o => `
+            <div class="outcome">
+              <b class="count" data-to="${o.to}"${o.suffix ? ` data-suffix="${o.suffix}"` : ''}>0</b>
+              <span>${o.label}</span>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+}
+
+/* Animate counters, bars, and the gauge once the overview scrolls into view. */
+function initOverviewMotion() {
+  const section = document.getElementById('overview');
+  if (!section) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const run = () => {
+    section.classList.add('go');
+    const arc = section.querySelector('.g-arc');
+    const gaugeTarget = (GAUGE_CIRC * (1 - 0.995)).toFixed(1);
+    if (reduce) {
+      section.querySelectorAll('.count').forEach(setFinal);
+      if (arc) arc.style.strokeDashoffset = gaugeTarget;
+      return;
+    }
+    section.querySelectorAll('.count').forEach(animateCount);
+    if (arc) requestAnimationFrame(() => { arc.style.strokeDashoffset = gaugeTarget; });
+  };
+
+  const io = new IntersectionObserver((entries) => entries.forEach(e => {
+    if (e.isIntersecting) { run(); io.disconnect(); }
+  }), { threshold: .25 });
+  io.observe(section);
+}
+function fmtCount(v, dec, suffix) {
+  const n = dec ? v.toFixed(dec) : Math.round(v).toLocaleString();
+  return `${n}${suffix}`;
+}
+function setFinal(el) {
+  el.textContent = fmtCount(+el.dataset.to, +el.dataset.dec || 0, el.dataset.suffix || '');
+}
+function animateCount(el) {
+  const to = +el.dataset.to, dec = +el.dataset.dec || 0, suffix = el.dataset.suffix || '';
+  const dur = 1100, t0 = performance.now();
+  const tick = (now) => {
+    const p = Math.min((now - t0) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = fmtCount(to * eased, dec, suffix);
+    if (p < 1) requestAnimationFrame(tick); else setFinal(el);
+  };
+  requestAnimationFrame(tick);
+}
+
+/* =========================================================
+   WORD EXPORT (delegates to report-export.js)
+   ========================================================= */
+function initExport() {
+  document.querySelectorAll('.btn-export').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const kind = btn.dataset.export;
+      const api = window.InternshipReport;
+      if (!api || typeof api[kind] !== 'function') { console.warn('Report export unavailable'); return; }
+      if (btn.classList.contains('loading')) return;
+      const txt = btn.querySelector('.hx-txt b');
+      const original = txt ? txt.textContent : '';
+      btn.classList.add('loading');
+      if (txt) txt.textContent = 'Preparing…';
+      try {
+        await api[kind]();
+      } catch (err) {
+        console.error('Export failed', err);
+        if (txt) txt.textContent = 'Try again';
+        setTimeout(() => { if (txt) txt.textContent = original; }, 1800);
+        btn.classList.remove('loading');
+        return;
+      }
+      if (txt) txt.textContent = 'Done ✓';
+      setTimeout(() => { if (txt) txt.textContent = original; btn.classList.remove('loading'); }, 1600);
+    });
+  });
 }
 
 /* =========================================================

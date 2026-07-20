@@ -381,6 +381,84 @@ em { font-style: italic; }
 .lb-prev, .lb-next { top: 50%; transform: translateY(-50%); width: 50px; height: 50px; }
 .lb-prev { left: 22px; } .lb-next { right: 22px; }
 
+/* ---------- Hero: Word export ---------- */
+.hero-export { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); max-width: 640px; }
+.hx-label { display: inline-flex; align-items: center; gap: 8px; font-size: 11.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.hx-label svg { width: 15px; height: 15px; color: var(--accent); }
+.hx-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn-export {
+  flex: 1 1 240px; display: flex; align-items: center; gap: 13px; text-align: left; cursor: pointer;
+  background: var(--paper); border: 1px solid var(--line-strong); border-radius: 12px; padding: 12px 15px; color: var(--ink);
+  transition: transform .15s var(--ease), border-color .15s var(--ease), box-shadow .15s var(--ease);
+}
+.btn-export:hover { transform: translateY(-2px); border-color: var(--ink); box-shadow: var(--shadow-sm); }
+.btn-export:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn-export .ico { display: grid; place-items: center; width: 38px; height: 38px; flex-shrink: 0; border-radius: 9px; background: var(--accent-wash); color: var(--accent); }
+.btn-export .ico svg { width: 19px; height: 19px; }
+.btn-export .hx-txt { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+.btn-export .hx-txt b { font-size: 14.5px; font-weight: 600; }
+.btn-export .hx-txt span { font-size: 12px; color: var(--muted); }
+.btn-export.loading { opacity: .8; pointer-events: none; }
+.btn-export.loading .ico { animation: hxpulse 1s var(--ease) infinite; }
+@keyframes hxpulse { 50% { opacity: .45; } }
+
+/* ---------- Overview ---------- */
+.ov-strip { margin-bottom: 22px; }
+.ov-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 22px; align-items: stretch; }
+.ov-grid > div { display: flex; }
+.ov-card { flex: 1; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); padding: 28px 30px; }
+.ov-card.arc-card, .ov-card.outcomes-card { display: flex; flex-direction: column; }
+.progress-block.ov-card { display: flex; flex-direction: column; }
+.progress-block.ov-card .pb-note { margin-top: auto; padding-top: 20px; margin-bottom: 0; }
+.ov-card-head { margin-bottom: 22px; }
+.ov-eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); }
+.ov-card-head h3 { font-family: var(--serif); font-weight: 400; font-size: 1.55rem; line-height: 1.1; margin-top: 6px; text-wrap: balance; }
+.progress-block.ov-card { padding: 28px 30px; }
+
+/* progress fill: width-based so it animates on .go (overrides the transform default) */
+#overview .pb-fill { transform: none; width: 0; transition: width 1.1s var(--ease) .15s; }
+#overview.go .pb-fill { width: var(--target); }
+
+/* Internship arc */
+.arc { list-style: none; display: grid; }
+.arc-step { display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding-bottom: 22px; position: relative; }
+.arc-step:last-child { padding-bottom: 0; }
+.arc-step::before { content: ''; position: absolute; left: 19.25px; top: 40px; bottom: -2px; width: 1.5px; background: var(--line); }
+.arc-step:last-child::before { display: none; }
+.arc-node { width: 40px; height: 40px; border-radius: 99px; display: grid; place-items: center; background: var(--accent-wash); color: var(--accent); font-family: var(--serif); font-size: 1.25rem; border: 1px solid var(--line); position: relative; z-index: 1; }
+.arc-body { padding-top: 6px; }
+.arc-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.arc-title { font-weight: 600; font-size: 1rem; }
+.arc-wk { font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.arc-desc { margin-top: 5px; font-size: .92rem; color: var(--ink-soft); text-wrap: pretty; }
+
+/* Track effort bars */
+.track-bars { display: grid; gap: 18px; }
+.tb-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.tb-label { font-size: .95rem; font-weight: 500; }
+.tb-weeks { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tb-track { margin-top: 8px; height: 8px; border-radius: 99px; background: var(--bg); overflow: hidden; }
+.tb-fill { height: 100%; width: 0; border-radius: 99px; background: var(--accent); transition: width 1.1s var(--ease); }
+#overview.go .tb-fill { width: var(--target); }
+.tb-note { margin-top: 7px; font-size: 12px; color: var(--faint); text-wrap: pretty; }
+
+/* Signature outcomes + gauge */
+.outcomes { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; flex: 1; }
+.gauge-wrap { position: relative; width: 132px; height: 132px; flex-shrink: 0; }
+.gauge { width: 132px; height: 132px; display: block; transform: rotate(-90deg); }
+.g-track { fill: none; stroke: var(--line); stroke-width: 9; }
+.g-arc { fill: none; stroke: var(--accent); stroke-width: 9; stroke-linecap: round; transition: stroke-dashoffset 1.4s var(--ease); }
+.gauge-center { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.gauge-center b { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; line-height: 1; font-variant-numeric: tabular-nums; }
+.gauge-center span { font-size: 11px; color: var(--muted); display: block; margin-top: 3px; }
+.outcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 22px; }
+.outcome b { font-family: var(--serif); font-size: 1.85rem; font-weight: 400; line-height: 1; display: block; font-variant-numeric: tabular-nums; }
+.outcome span { font-size: 12px; color: var(--muted); margin-top: 6px; display: block; text-wrap: pretty; }
+
+@media (prefers-reduced-motion: reduce) {
+  #overview .pb-fill, .tb-fill, .g-arc, .btn-export.loading .ico { transition: none; animation: none; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 880px) {
   .nav-links {
@@ -394,6 +472,7 @@ em { font-style: italic; }
   .nav-toggle { display: inline-flex; }
   .work-grid { grid-template-columns: 1fr; }
   .work-card.feature { grid-column: span 1; }
+  .ov-grid { grid-template-columns: 1fr; }
   .stat-strip { grid-template-columns: 1fr 1fr; }
   .stat:nth-child(2) { border-right: 0; }
   .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
@@ -407,6 +486,9 @@ em { font-style: italic; }
   .stat-strip { grid-template-columns: 1fr; }
   .stat { border-right: 0; border-bottom: 1px solid var(--line); }
   .stat:last-child { border-bottom: 0; }
+  .btn-export { flex-basis: 100%; }
+  .outcomes { grid-template-columns: 1fr; justify-items: start; gap: 24px; }
+  .outcome-grid { width: 100%; }
   .j-item { grid-template-columns: 1fr; gap: 12px; }
   .j-wk-num { font-size: 2.4rem; }
   .gallery { columns: 1; }
