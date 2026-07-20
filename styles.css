@@ -459,6 +459,12 @@ em { font-style: italic; }
   #overview .pb-fill, .tb-fill, .g-arc, .btn-export.loading .ico { transition: none; animation: none; }
 }
 
+/* ---------- Routed views ---------- */
+[data-view][hidden] { display: none !important; }
+@keyframes viewIn { from { opacity: 0; } to { opacity: 1; } }
+[data-view].view-on { animation: viewIn .42s var(--ease) both; }
+@media (prefers-reduced-motion: reduce) { [data-view].view-on { animation: none; } }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 880px) {
   .nav-links {

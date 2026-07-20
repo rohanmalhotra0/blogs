@@ -16,22 +16,22 @@
 
   <!-- Top bar -->
   <nav class="topbar" id="topbar">
-    <a class="brand" href="#top" aria-label="Home">
+    <a class="brand" href="#/" data-route="home" aria-label="Home">
       <span class="brand-mark">R</span>
       <span class="brand-text">Rohan<span class="brand-sub">IBM Internship</span></span>
     </a>
     <div class="nav-links" id="nav-links">
-      <a href="#overview" data-spy="overview">Overview</a>
-      <a href="#work" data-spy="work">Work</a>
-      <a href="#journey" data-spy="journey">Journey</a>
-      <a href="#gallery" data-spy="gallery">Gallery</a>
-      <a href="#media" data-spy="media">Media</a>
+      <a href="#/" data-route="home">Overview</a>
+      <a href="#/work" data-route="work">Work</a>
+      <a href="#/journey" data-route="journey">Journey</a>
+      <a href="#/gallery" data-route="gallery">Gallery</a>
+      <a href="#/media" data-route="media">Media</a>
     </div>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" data-icon="menu"></button>
   </nav>
 
-  <!-- Hero -->
-  <header class="hero" id="top">
+  <!-- Hero (home view) -->
+  <header class="hero" id="top" data-view="home">
     <div class="wrap">
       <p class="hero-eyebrow">IBM Consulting · Summer Internship</p>
       <h1 class="hero-title">
@@ -43,16 +43,16 @@
         leading the NEXUS AI capstone team to an early delivery. The story so far, and where it goes next.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#journey">Read the journey <span class="ico" data-icon="arrow-right"></span></a>
-        <a class="btn btn-quiet" href="#work">View the work</a>
+        <a class="btn btn-primary" href="#/journey">Read the journey <span class="ico" data-icon="arrow-right"></span></a>
+        <a class="btn btn-quiet" href="#/work">View the work</a>
       </div>
 
       <div class="hero-export" id="hero-export">
-        <div class="hx-label"><span class="ico" data-icon="file"></span> Export to Word</div>
+        <div class="hx-label"><span class="ico" data-icon="file"></span> Export as PDF</div>
         <div class="hx-btns">
           <button type="button" class="btn-export" data-export="overview">
             <span class="ico" data-icon="download"></span>
-            <span class="hx-txt"><b>Overview</b><span>1-page summary</span></span>
+            <span class="hx-txt"><b>Overview</b><span>Summary report</span></span>
           </button>
           <button type="button" class="btn-export" data-export="detailed">
             <span class="ico" data-icon="layers"></span>
@@ -64,13 +64,13 @@
   </header>
 
   <main>
-    <!-- Overview -->
-    <section class="section" id="overview">
+    <!-- Overview (home view) -->
+    <section class="section section-overview" id="overview" data-view="home">
       <div class="wrap">
         <div class="sec-head reveal">
           <span class="sec-index">01</span>
           <h2 class="sec-title">At a glance</h2>
-          <p class="sec-lede">The internship in numbers, its arc, and where the effort actually went — before you dive into the week-by-week record.</p>
+          <p class="sec-lede">The internship in numbers, its arc, and where the effort actually went, before you dive into the week-by-week record.</p>
         </div>
         <div class="ov-strip reveal" id="ov-strip"><!-- JS --></div>
         <div class="ov-grid reveal">
@@ -85,7 +85,7 @@
     </section>
 
     <!-- Work -->
-    <section class="section" id="work">
+    <section class="section" id="work" data-view="work">
       <div class="wrap">
         <div class="sec-head reveal">
           <span class="sec-index">02</span>
@@ -97,7 +97,7 @@
     </section>
 
     <!-- Journey -->
-    <section class="section" id="journey">
+    <section class="section" id="journey" data-view="journey">
       <div class="wrap">
         <div class="sec-head reveal">
           <span class="sec-index">03</span>
@@ -110,7 +110,7 @@
     </section>
 
     <!-- Gallery -->
-    <section class="section" id="gallery">
+    <section class="section" id="gallery" data-view="gallery">
       <div class="wrap">
         <div class="sec-head reveal">
           <span class="sec-index">04</span>
@@ -122,7 +122,7 @@
     </section>
 
     <!-- Media -->
-    <section class="section" id="media">
+    <section class="section" id="media" data-view="media">
       <div class="wrap">
         <div class="sec-head reveal">
           <span class="sec-index">05</span>

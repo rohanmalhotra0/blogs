@@ -146,10 +146,10 @@ function aggregateProject(key) {
   return out;
 }
 function weekSpan(key) {
-  if (key === '__foundations') return `Weeks 1–${completedWeeks.length}`;
+  if (key === '__foundations') return `Weeks 1-${completedWeeks.length}`;
   const ws = aggregateProject(key).map(x => x.week);
   if (!ws.length) return '';
-  return ws.length === 1 ? `Week ${ws[0]}` : `Weeks ${Math.min(...ws)}–${Math.max(...ws)}`;
+  return ws.length === 1 ? `Week ${ws[0]}` : `Weeks ${Math.min(...ws)}-${Math.max(...ws)}`;
 }
 
 /* ---------- Timeline filters ----------
@@ -181,11 +181,10 @@ document.addEventListener('DOMContentLoaded', () => {
   renderMedia();
   hydrateIcons();
   initNav();
-  initReveal();
   initModal();
   initLightbox();
-  initOverviewMotion();
   initExport();
+  initRouter();
 });
 
 /* ---------- Work ---------- */
@@ -388,15 +387,15 @@ function renderOverview() {
       </div>
       <div class="pb-bar"><div class="pb-fill" style="--target:${pct}%"></div></div>
       <div class="pb-ticks">${Array.from({ length: totalWeeks }, (_, i) => `<span>${i + 1}</span>`).join('')}</div>
-      <p class="pb-note">${done} weeks logged in full detail across ${person.totalMetrics.projectsActive || 5} workstreams — ${totalRules}+ Oracle EPM business rules shipped along the way. Intern10 was completed five weeks ahead of schedule.</p>
+      <p class="pb-note">${done} weeks logged in full detail across ${person.totalMetrics.projectsActive || 5} workstreams, with ${totalRules}+ Oracle EPM business rules shipped along the way. Intern10 was completed five weeks ahead of schedule.</p>
     </div>`;
 
   /* --- Internship arc --- */
   const ARC = [
     { n: 1, t: 'Onboard & learn', wk: 'Week 1', d: '57 hours across 186 IBM Learn modules, 8 badges, and every Intern10 networking interview.' },
-    { n: 2, t: 'Build for clients', wk: 'Weeks 2–5', d: 'Oracle EPM business rules, a YOLO11 model for Spot, and the NEXUS RAG platform as team lead.' },
+    { n: 2, t: 'Build for clients', wk: 'Weeks 2 to 5', d: 'Oracle EPM business rules, a YOLO11 model for Spot, and the NEXUS RAG platform as team lead.' },
     { n: 3, t: 'Ship & present', wk: 'Week 6', d: 'Custom Dashboard 2.0, Spot demoed live at DevCon, and the Capstone submitted a week early.' },
-    { n: 4, t: 'Deepen & automate', wk: 'Weeks 7–8', d: 'Perpetual calc-script drivers, rolling forecasts, and local QLoRA fine-tuning for an EPM assistant.' },
+    { n: 4, t: 'Deepen & automate', wk: 'Weeks 7 to 8', d: 'Perpetual calc-script drivers, rolling forecasts, and local QLoRA fine-tuning for an EPM assistant.' },
   ];
   document.getElementById('ov-arc').innerHTML = `
     <div class="ov-card arc-card">
@@ -467,28 +466,32 @@ function renderOverview() {
 }
 
 /* Animate counters, bars, and the gauge once the overview scrolls into view. */
-function initOverviewMotion() {
+/* Runs each time the home view is shown, so the numbers, bars, and gauge
+   replay their entrance (reset first, then animate). */
+function runOverviewMotion() {
   const section = document.getElementById('overview');
   if (!section) return;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const arc = section.querySelector('.g-arc');
+  const gaugeTarget = (GAUGE_CIRC * (1 - 0.995)).toFixed(1);
 
-  const run = () => {
+  // Reset to the pre-animation state.
+  section.classList.remove('go');
+  if (arc) arc.style.strokeDashoffset = GAUGE_CIRC.toFixed(1);
+  section.querySelectorAll('.count').forEach(el => { el.textContent = '0'; });
+  void section.offsetWidth; // force reflow so the bar/gauge transitions restart
+
+  if (reduce) {
     section.classList.add('go');
-    const arc = section.querySelector('.g-arc');
-    const gaugeTarget = (GAUGE_CIRC * (1 - 0.995)).toFixed(1);
-    if (reduce) {
-      section.querySelectorAll('.count').forEach(setFinal);
-      if (arc) arc.style.strokeDashoffset = gaugeTarget;
-      return;
-    }
+    section.querySelectorAll('.count').forEach(setFinal);
+    if (arc) arc.style.strokeDashoffset = gaugeTarget;
+    return;
+  }
+  requestAnimationFrame(() => {
+    section.classList.add('go');
     section.querySelectorAll('.count').forEach(animateCount);
     if (arc) requestAnimationFrame(() => { arc.style.strokeDashoffset = gaugeTarget; });
-  };
-
-  const io = new IntersectionObserver((entries) => entries.forEach(e => {
-    if (e.isIntersecting) { run(); io.disconnect(); }
-  }), { threshold: .25 });
-  io.observe(section);
+  });
 }
 function fmtCount(v, dec, suffix) {
   const n = dec ? v.toFixed(dec) : Math.round(v).toLocaleString();
@@ -674,15 +677,16 @@ function closeLightbox() {
 }
 
 /* =========================================================
-   NAV · SCROLL · REVEAL
+   NAV · ROUTER · REVEAL
+   Each nav item is its own page (hash route). One view shows at a time.
    ========================================================= */
+const ROUTE_VIEWS = ['home', 'work', 'journey', 'gallery', 'media'];
+
 function initNav() {
   const nav = document.getElementById('topbar');
   const links = document.getElementById('nav-links');
   const toggle = document.getElementById('nav-toggle');
   const bar = document.getElementById('scroll-progress');
-  const spies = [...document.querySelectorAll('.nav-links a[data-spy]')];
-  const sections = spies.map(a => document.getElementById(a.dataset.spy)).filter(Boolean);
 
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
@@ -692,19 +696,40 @@ function initNav() {
     nav.classList.toggle('scrolled', y > 16);
     const h = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.width = `${h > 0 ? (y / h) * 100 : 0}%`;
-    let current = '';
-    sections.forEach(s => { if (s.getBoundingClientRect().top <= 130) current = s.id; });
-    spies.forEach(a => a.classList.toggle('active', a.dataset.spy === current));
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 }
-function initReveal() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in')); return;
-  }
-  const io = new IntersectionObserver((entries) => entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), { threshold: .12, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* Reveal every .reveal inside the freshly shown view. */
+function revealView(view) {
+  document.querySelectorAll(`[data-view="${view}"]`).forEach(root => {
+    if (root.classList.contains('reveal')) root.classList.add('in');
+    root.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  });
+}
+
+function currentRoute() {
+  const h = (location.hash || '').replace(/^#\/?/, '').split(/[/?#]/)[0];
+  return ROUTE_VIEWS.includes(h) ? h : 'home';
+}
+
+function showView(view) {
+  document.querySelectorAll('[data-view]').forEach(el => {
+    const on = el.dataset.view === view;
+    el.hidden = !on;
+    el.classList.toggle('view-on', on);
+  });
+  document.querySelectorAll('[data-route]').forEach(a =>
+    a.classList.toggle('active', a.dataset.route === view));
+  window.scrollTo(0, 0);
+  const bar = document.getElementById('scroll-progress');
+  if (bar) bar.style.width = '0%';
+  revealView(view);
+  if (view === 'home') runOverviewMotion();
+}
+
+function initRouter() {
+  window.addEventListener('hashchange', () => showView(currentRoute()));
+  showView(currentRoute());
 }
