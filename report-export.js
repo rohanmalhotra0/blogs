@@ -96,7 +96,10 @@
     'Built a custom Oracle EPM Dashboard 2.0 with a tabbed navigation flow',
     'Architected an Oracle EPM AI agent chat platform on ICA (Skills, Projects, MCP, file attachments)',
     'Delivered a dynamic rolling 13-day forecast in Oracle Predictive Cash Forecasting',
-    'Stood up a local AI workstation and ran QLoRA fine-tuning on open-source models'
+    'Stood up a local AI workstation and ran QLoRA fine-tuning on open-source models',
+    'Built a GL and chart-of-accounts workflow with metadata CSV output, tenant reconciliation, and versioned context merges',
+    'Shipped a secure Oracle-aware Chrome browser agent with workbook and VBA context as extension version 0.6.0',
+    'Productized EPM Wizard as a hosted multi-user platform and validated it with 751 core tests plus 16 browser end-to-end tests'
   ];
 
   // Vector "at a glance" datasets (mirror the site's overview numbers).
@@ -104,18 +107,20 @@
     { n: 1, t: 'Onboard and learn', wk: 'Week 1', d: '57 hours across 186 IBM Learn modules, 8 badges, and every Intern10 networking interview.' },
     { n: 2, t: 'Build for clients', wk: 'Weeks 2 to 5', d: 'Oracle EPM business rules, a YOLO11 model for Spot, and the NEXUS RAG platform as team lead.' },
     { n: 3, t: 'Ship and present', wk: 'Week 6', d: 'Custom Dashboard 2.0, Spot demoed live at DevCon, and the Capstone submitted a week early.' },
-    { n: 4, t: 'Deepen and automate', wk: 'Weeks 7 to 8', d: 'Perpetual calc-script drivers, rolling forecasts, and local QLoRA fine-tuning for an EPM assistant.' }
+    { n: 4, t: 'Deepen and automate', wk: 'Weeks 7 to 8', d: 'Perpetual calc-script drivers, rolling forecasts, and local QLoRA fine-tuning for an EPM assistant.' },
+    { n: 5, t: 'Productize and validate', wk: 'Week 9', d: 'GL integration, HSP snapshot sync, a secure Chrome agent, hosted infrastructure, and production test coverage.' }
   ];
 
   var TRACKS = [
-    { label: 'Oracle EPM · MCW', weeks: 7, note: '4+ business rules · Dashboard 2.0 · EPM AI agent' },
+    { label: 'Oracle EPM · MCW', weeks: 8, note: '7 business rules · GL integration · Dashboard 2.0' },
     { label: 'DRW Managed Services', weeks: 7, note: 'Executive EPM deck · production support' },
     { label: 'Boston Dynamics Spot', weeks: 5, note: '99.5% mAP@50 · live DevCon demo' },
     { label: 'NEXUS Capstone', weeks: 5, note: 'Team lead · delivered a week early' },
-    { label: 'AI / Technical Innovation', weeks: 2, note: 'QLoRA fine-tuning · RAG assistant' },
-    { label: 'Intern10 and foundations', weeks: 8, note: 'Onboarding · 186 modules · networking' }
+    { label: 'AI / Technical Innovation', weeks: 3, note: 'QLoRA · RAG · parallel role agents' },
+    { label: 'EPM Wizard Product', weeks: 1, note: 'GL integration · Chrome agent · hosted platform' },
+    { label: 'Intern10 and foundations', weeks: 9, note: 'Onboarding · 186 modules · networking' }
   ];
-  var TRACK_MAX = 8;
+  var TRACK_MAX = 9;
 
   // Readable labels for week-level metric keys.
   var METRIC_LABELS = {
@@ -133,7 +138,13 @@
     capstoneSubmitted: 'Capstone',
     intern10: 'Intern10',
     projectsJoined: 'Projects joined',
-    badges: 'Badges'
+    badges: 'Badges',
+    backendTests: 'Backend tests',
+    frontendTests: 'Frontend tests',
+    extensionTests: 'Extension tests',
+    browserE2E: 'Browser E2E',
+    extensionVersion: 'Extension',
+    agentRoles: 'Agent roles'
   };
 
   /* ---------------------------------------------------------------------- *
@@ -218,10 +229,16 @@
       'he authored multiple Oracle EPM business rules, including a rolling 13-day forecast and SOFR ' +
       'loan logic, built a custom Dashboard 2.0 with a tabbed navigation flow, and architected an ' +
       'Oracle EPM AI agent platform connected to ICA. As capstone Team Lead he delivered the NEXUS ' +
-      'project a week early and completed all Intern10 tasks five weeks early, then closed the ' +
-      'internship by standing up a local AI workstation for QLoRA fine-tuning and RAG research ' +
-      'aimed at accelerating Oracle EPM consulting.';
-    return [p1, p2];
+      'project a week early and completed all Intern10 tasks five weeks early. He then stood up a ' +
+      'local AI workstation for QLoRA fine-tuning and RAG research aimed at accelerating Oracle EPM consulting.';
+    var p3 =
+      'In the final week he productized that research as EPM Wizard: a hosted multi-user Oracle EPM ' +
+      'workspace with GL and chart-of-accounts spreadsheet integration, HSP-aligned snapshot sync, ' +
+      'form deployment, a secure Chrome browser agent, and redacted workbook and VBA context. He added ' +
+      'Google OAuth, PostgreSQL owner isolation, Together AI, a read-only 12-role agent sandbox, and ' +
+      'production web and installed-extension test environments. The final validated snapshot passed ' +
+      '595 backend tests, 126 frontend tests, 30 extension tests, and 16 browser end-to-end tests.';
+    return [p1, p2, p3];
   }
 
   /* ---------------------------------------------------------------------- *
@@ -634,7 +651,7 @@
     setDraw(ctx, HAIRLINE);
     doc.setLineWidth(0.3);
     doc.line(x, 262, x + ctx.contentW, 262);
-    drawText(ctx, 'Oracle EPM · DRW AMS · Boston Dynamics Spot · NEXUS Capstone · Local AI', x, 266, {
+    drawText(ctx, 'Oracle EPM · EPM Wizard · GL integration · Browser Agent · Local AI', x, 266, {
       font: SANS, style: 'normal', size: 8.5, color: FAINT
     });
   }

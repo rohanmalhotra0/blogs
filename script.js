@@ -90,7 +90,7 @@ const WORKSTREAMS = [
     role: 'Main workstream · Implementation', feature: true,
     desc: 'My primary track: a live Oracle EPM implementation for client MCW. I mapped the end-to-end process, wrote forecasting business rules in Groovy, built a custom Dashboard 2.0 with tabbed navigation, and architected an AI agent chat platform on top of the EPM data.',
     tech: ['Oracle EPM', 'Groovy', 'Planning', 'Dashboard 2.0', 'ICA API', 'RAG', 'MCP'],
-    metrics: [{ n: '4+', l: 'Business rules' }, { n: '2.0', l: 'Custom dashboard' }, { n: 'AI', l: 'EPM agent platform' }],
+    metrics: [{ n: '7', l: 'Business rules' }, { n: '2.0', l: 'Custom dashboard' }, { n: 'GL', l: 'Spreadsheet integration' }],
   },
   {
     key: 'Boston Dynamics Spot', icon: 'bot', name: 'Boston Dynamics Spot',
@@ -116,9 +116,16 @@ const WORKSTREAMS = [
   {
     key: 'AI / Technical Innovation', icon: 'cpu', name: 'AI / Technical Innovation',
     role: 'Local AI · fine-tuning · RAG',
-    desc: 'A self-directed track: I stood up an Intel Arc Pro B70 workstation, fine-tuned open-source coding models locally with QLoRA, and researched RAG and local inference to architect an enterprise Oracle EPM AI assistant that turns implementation knowledge and business rules into on-demand answers.',
-    tech: ['QLoRA', 'Intel Arc GPU', 'Fine-Tuning', 'RAG', 'Local Inference', 'Oracle EPM'],
-    metrics: [{ n: 'QLoRA', l: 'Local fine-tuning' }, { n: 'Intel Arc', l: 'B70 workstation' }, { n: 'RAG', l: 'EPM assistant' }],
+    desc: 'A self-directed track: I stood up an Intel Arc Pro B70 workstation, fine-tuned open-source coding models with QLoRA, and combined RAG, snapshots, spreadsheet analysis, hosted providers, and parallel role agents into an enterprise Oracle EPM assistant architecture.',
+    tech: ['QLoRA', 'Intel Arc GPU', 'Fine-Tuning', 'RAG', 'Together AI', 'Parallel Agents', 'Oracle EPM'],
+    metrics: [{ n: 'QLoRA', l: 'Local fine-tuning' }, { n: '12', l: 'Agent roles' }, { n: 'RAG', l: 'EPM assistant' }],
+  },
+  {
+    key: 'EPM Wizard Product Engineering', icon: 'network', name: 'EPM Wizard Product Engineering',
+    role: 'Full-stack product · browser agent · GL integration',
+    desc: 'Built EPM Wizard into a hosted, multi-user Oracle EPM workspace with GL and chart-of-accounts ingestion, HSP snapshot sync, form deployment, a secure Chrome browser agent, workbook context, production testing, and a role-based agent sandbox.',
+    tech: ['FastAPI', 'React', 'PostgreSQL', 'Fly.io', 'Chrome MV3', 'Playwright', 'Oracle EPM'],
+    metrics: [{ n: '0.6.0', l: 'Extension release' }, { n: '767', l: 'Automated tests' }, { n: '16', l: 'Browser E2E tests' }],
   },
   {
     key: '__foundations', icon: 'cap', name: 'Intern10 & Foundations',
@@ -164,7 +171,8 @@ const FILTERS = [
   { label: 'Capstone', proj: 'capstone', pwNames: ['Capstone'], tech: 2 },
   { label: 'DRW AMS', proj: 'drw', pwNames: ['DRW AMS'], tech: 3 },
   { label: 'AI Innovation', proj: 'ai', pwNames: ['AI / Technical Innovation'], tech: 4 },
-  { label: 'Learning', proj: 'learning', learning: true, tech: 5 },
+  { label: 'EPM Wizard', proj: 'epmw', pwNames: ['EPM Wizard Product Engineering'], tech: 5 },
+  { label: 'Learning', proj: 'learning', learning: true, tech: 6 },
 ];
 
 /* =========================================================
@@ -316,6 +324,10 @@ function quickStats(w) {
   if (m.meetingsAttended) picks.push({ b: m.meetingsAttended, s: 'meetings' });
   if (m.presentationsGiven) picks.push({ b: m.presentationsGiven, s: 'presentations' });
   if (m.detectionConfidence) picks.push({ b: m.detectionConfidence, s: 'live conf.' });
+  if (m.backendTests) picks.push({ b: m.backendTests, s: 'backend tests' });
+  if (m.browserE2E) picks.push({ b: m.browserE2E, s: 'browser E2E' });
+  if (m.extensionVersion) picks.push({ b: m.extensionVersion, s: 'extension' });
+  if (m.agentRoles) picks.push({ b: m.agentRoles, s: 'agent roles' });
   if (!picks.length) return '';
   return `<div class="j-stats">${picks.slice(0, 4).map(p => `<div class="j-stat"><b>${p.b}</b><span>${p.s}</span></div>`).join('')}</div>`;
 }
@@ -368,7 +380,7 @@ function renderOverview() {
     { ico: 'clock', to: tm.learningHours || 57, label: 'Hours of self-driven learning' },
     { ico: 'book', to: tm.modulesCompleted || 186, label: 'IBM Learn modules completed' },
     { ico: 'award', to: tm.badgesEarned || 8, label: 'Badges & certifications' },
-    { ico: 'chart', to: tm.projectsActive || 5, label: 'Parallel workstreams' },
+    { ico: 'chart', to: tm.projectsActive || 7, label: 'Parallel workstreams' },
   ];
   document.getElementById('ov-strip').innerHTML = `<div class="stat-strip">${stats.map(s => `
     <div class="stat">
@@ -387,7 +399,7 @@ function renderOverview() {
       </div>
       <div class="pb-bar"><div class="pb-fill" style="--target:${pct}%"></div></div>
       <div class="pb-ticks">${Array.from({ length: totalWeeks }, (_, i) => `<span>${i + 1}</span>`).join('')}</div>
-      <p class="pb-note">${done} weeks logged in full detail across ${person.totalMetrics.projectsActive || 5} workstreams, with ${totalRules}+ Oracle EPM business rules shipped along the way. Intern10 was completed five weeks ahead of schedule.</p>
+      <p class="pb-note">${done} weeks logged in full detail across ${person.totalMetrics.projectsActive || 7} workstreams, with ${totalRules} Oracle EPM business rules shipped along the way. Intern10 was completed five weeks ahead of schedule.</p>
     </div>`;
 
   /* --- Internship arc --- */
@@ -396,10 +408,11 @@ function renderOverview() {
     { n: 2, t: 'Build for clients', wk: 'Weeks 2 to 5', d: 'Oracle EPM business rules, a YOLO11 model for Spot, and the NEXUS RAG platform as team lead.' },
     { n: 3, t: 'Ship & present', wk: 'Week 6', d: 'Custom Dashboard 2.0, Spot demoed live at DevCon, and the Capstone submitted a week early.' },
     { n: 4, t: 'Deepen & automate', wk: 'Weeks 7 to 8', d: 'Perpetual calc-script drivers, rolling forecasts, and local QLoRA fine-tuning for an EPM assistant.' },
+    { n: 5, t: 'Productize & validate', wk: 'Week 9', d: 'GL integration, HSP snapshot sync, a secure Chrome agent, hosted infrastructure, and production test coverage.' },
   ];
   document.getElementById('ov-arc').innerHTML = `
     <div class="ov-card arc-card">
-      <div class="ov-card-head"><span class="ov-eyebrow">The arc</span><h3>From onboarding to automation</h3></div>
+      <div class="ov-card-head"><span class="ov-eyebrow">The arc</span><h3>From onboarding to productization</h3></div>
       <ol class="arc">
         ${ARC.map(p => `
           <li class="arc-step">
@@ -414,11 +427,12 @@ function renderOverview() {
 
   /* --- Track effort (weeks active per workstream) --- */
   const TRACKS = [
-    { key: 'MCW Implementation', label: 'Oracle EPM · MCW', note: '4+ business rules · Dashboard 2.0 · EPM AI agent' },
+    { key: 'MCW Implementation', label: 'Oracle EPM · MCW', note: '7 business rules · GL integration · Dashboard 2.0' },
     { key: 'DRW AMS', label: 'DRW Managed Services', note: 'Executive EPM deck · production support' },
     { key: 'Boston Dynamics Spot', label: 'Boston Dynamics Spot', note: '99.5% mAP@50 · live DevCon demo' },
     { key: 'Capstone', label: 'NEXUS Capstone', note: 'Team lead · delivered a week early' },
-    { key: 'AI / Technical Innovation', label: 'AI / Technical Innovation', note: 'QLoRA fine-tuning · RAG assistant' },
+    { key: 'AI / Technical Innovation', label: 'AI / Technical Innovation', note: 'QLoRA · RAG · parallel role agents' },
+    { key: 'EPM Wizard Product Engineering', label: 'EPM Wizard Product', note: 'GL integration · Chrome agent · hosted platform' },
     { key: '__foundations', label: 'Intern10 & foundations', note: 'Onboarding · 186 modules · networking' },
   ].map(t => ({ ...t, weeks: t.key === '__foundations' ? done : aggregateProject(t.key).length }))
    .filter(t => t.weeks > 0);
@@ -513,7 +527,7 @@ function animateCount(el) {
 }
 
 /* =========================================================
-   WORD EXPORT (delegates to report-export.js)
+   PDF EXPORT (delegates to report-export.js)
    ========================================================= */
 function initExport() {
   document.querySelectorAll('.btn-export').forEach(btn => {
@@ -573,7 +587,7 @@ function openWeek(num) {
   const w = allWeeks.find(x => x.week === num);
   if (!w) return;
   const shots = getAssets(num), m = w.metrics || {};
-  const statEntries = Object.entries(m).slice(0, 5).map(([k, v]) => ({ v, l: prettyMetric(k) }));
+  const statEntries = Object.entries(m).slice(0, 6).map(([k, v]) => ({ v, l: prettyMetric(k) }));
   const projects = (w.projectWork || []).filter(p => p && typeof p === 'object' && p.name)
     .sort((a, b) => (b.name === FEATURED) - (a.name === FEATURED));
 
@@ -636,6 +650,8 @@ function prettyMetric(k) {
     imagesLabeled: 'Images labeled', projectsJoined: 'Projects joined', modelPrecision: 'Precision %',
     modelRecall: 'Recall %', modelMAP50: 'mAP@50 %', presentationsGiven: 'Presentations', modelAccuracy: 'Model accuracy %',
     businessRules: 'Business rules', capstoneSubmitted: 'Capstone', detectionConfidence: 'Detection conf.', intern10: 'Intern10',
+    backendTests: 'Backend tests', frontendTests: 'Frontend tests', extensionTests: 'Extension tests',
+    browserE2E: 'Browser E2E', extensionVersion: 'Extension version', agentRoles: 'Agent roles',
   };
   return map[k] || k.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase());
 }

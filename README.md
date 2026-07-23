@@ -186,7 +186,7 @@ totalMetrics: {
   learningHours: 105,      // Update as you log more hours
   modulesCompleted: 186,   // Update total modules
   badgesEarned: 8,         // Update total badges
-  projectsActive: 5        // Update active project count
+  projectsActive: 7        // Update active project count
 }
 ```
 
@@ -281,8 +281,9 @@ Possible additions for future versions:
 
 ---
 
-**Last Updated**: June 8, 2026  
-**Tracker Version**: 1.0
+**Last Updated**: July 23, 2026
+
+**Tracker Version**: 1.2
 
 For questions or issues, update the tracker and review with your manager during check-ins.
 # blog

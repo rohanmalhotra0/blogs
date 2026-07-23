@@ -16,7 +16,10 @@ const internshipData = {
       "Digital Product Engineering",
       "Boston Dynamics Spot",
       "Capstone Project",
-      "Intern10 Deliverables"
+      "Intern10 Deliverables",
+      "EPM Wizard Product Engineering",
+      "GL and Spreadsheet Integration",
+      "Chrome Extension and Browser Agent"
     ]
   },
 
@@ -29,7 +32,7 @@ const internshipData = {
         learningHours: 57,
         modulesCompleted: 186,
         badgesEarned: 8,
-        projectsActive: 5
+        projectsActive: 7
       },
       weeks: [
         {
@@ -968,19 +971,117 @@ const internshipData = {
 
         {
           week: 9,
-          title: "To Be Updated",
-          status: "pending",
-          tags: ["To Be Updated"],
-          mainFocus: "To be updated.",
-          accomplishments: ["To be updated."],
+          title: "EPM Wizard Productization, GL Integration, Chrome Extension, and Production Hardening",
+          status: "completed",
+          tags: ["EPM Wizard", "Oracle EPM", "GL Integration", "Chrome Extension", "Playwright", "RAG", "Product Engineering"],
+          mainFocus: "I closed the internship by turning the EPM Wizard concept into a tested, hosted Oracle EPM product: adding GL and chart-of-accounts spreadsheet workflows, HSP-aligned snapshot synchronization, a secure Chrome browser agent, workbook context, multi-user infrastructure, a real parallel-agent sandbox, and production-grade testing and documentation.",
+
+          accomplishments: [
+            "Expanded EPM Wizard from an initial forms-and-context MVP into a full Oracle EPM chat workspace and supervised browser-agent product",
+            "Built a GL and chart-of-accounts spreadsheet workflow that classifies uploaded workbooks, previews structure, and routes follow-up actions through the chat",
+            "Added deterministic Oracle Planning metadata CSV generation for chart-of-accounts imports",
+            "Added tenant reconciliation for GL members using exact, case-insensitive, and alias matches, including missing-member and parent-mismatch reporting",
+            "Enabled versioned chart-of-accounts merges into EPM context so changes remain auditable and reversible",
+            "Added spreadsheet layout handoffs that convert workbook layouts into validated Oracle EPM form or report specifications",
+            "Implemented Oracle HSP-aligned relational tables and incremental LCM snapshot synchronization for applications, plan types, dimensions, members, aliases, UDAs, attributes, calendars, forms, and business rules",
+            "Built form copy, edit, XML validation, and one-click Oracle EPM deployment workflows using real application templates",
+            "Added conversational actions for business rules and substitution variables, plus EPM Automate, MCP, background-process, and Data Integration support",
+            "Deployed a multi-user hosted stack on Fly.io with PostgreSQL, Google OAuth, owner isolation, Together AI provider support, health checks, and automated deployment workflows",
+            "Shipped EPM Wizard Chrome extension version 0.6.0 with secure origin binding, optional permissions, bounded action history, page-stability waits, screenshot compression, and duplicate suppression",
+            "Added Oracle-specific browser adapters for nested iframes, Shadow DOM, JET and ADF controls, virtualized grids, and canvas interactions",
+            "Connected Excel workbook context to the browser agent, including parse-only VBA, formulas, sheet samples, named ranges, tables, pivots, charts, connections, redaction, and truncation safeguards",
+            "Implemented the website OAuth and Oracle EPM credential flow inside the extension, added matching product icons, and published a direct downloadable extension package",
+            "Built a real read-only multi-agent sandbox with up to 12 role workers, owner-scoped sessions, pause, resume, cancel, capacity controls, live activity observation, and copyable handoffs",
+            "Redesigned the landing page, documentation, onboarding, chat composer, responsive navigation, accessibility behavior, and extension-first product story",
+            "Created human-style Playwright and Chromium test environments for the web app and installed extension while preserving production OAuth boundaries",
+            "Validated the production snapshot with 595 backend tests, 126 frontend tests, 30 extension tests, 13 Chromium application tests, and 3 installed-extension tests"
+          ],
+
           meetings: [],
-          training: ["To be updated."],
-          projectWork: [],
-          technicalWork: ["To be updated."],
-          deliverables: ["To be updated."],
-          metrics: {},
-          managerSummary: "To be updated.",
-          reflection: "To be updated.",
+          training: [
+            "Oracle Planning HSP metadata architecture and LCM snapshot structures",
+            "Chart-of-accounts ingestion, metadata imports, member reconciliation, and Data Integration workflows",
+            "Chrome Manifest V3 permissions, secure origin binding, content scripts, service workers, and installed-extension testing",
+            "Oracle JET, ADF, nested iframe, Shadow DOM, virtual-grid, and canvas browser automation patterns",
+            "Playwright and Chromium end-to-end testing with reusable staging OAuth state",
+            "Fly.io, PostgreSQL, Google OAuth, multi-user isolation, Together AI, and production deployment architecture",
+            "Accessible modal, keyboard, responsive, reduced-motion, and production frontend design"
+          ],
+
+          projectWork: [
+            {
+              name: "MCW Implementation",
+              tasks: [
+                "Built GL and chart-of-accounts workbook ingestion with deterministic metadata CSV output",
+                "Added tenant reconciliation for account members, aliases, hierarchy parents, and missing mappings",
+                "Implemented auditable, versioned chart-of-accounts merges into Oracle EPM context",
+                "Added spreadsheet-to-form and spreadsheet-to-report handoffs with identifier-first member resolution",
+                "Implemented HSP-aligned metadata storage and incremental LCM snapshot synchronization",
+                "Added one-click form deployment, business-rule actions, substitution-variable actions, and Data Integration support"
+              ]
+            },
+            {
+              name: "EPM Wizard Product Engineering",
+              tasks: [
+                "Expanded the chat workspace across forms, rules, reports, context, snapshots, metadata, skills, diagnostics, and browser automation",
+                "Deployed the application as a multi-user Fly.io stack with PostgreSQL, Google OAuth, owner isolation, Together AI, and CI/CD",
+                "Shipped Chrome extension 0.6.0 with secure permissions, Oracle page adapters, action history, and optimized screenshots",
+                "Attached redacted, parse-only Excel and VBA context to every browser-agent step",
+                "Added mandatory website OAuth and Oracle EPM connection flows plus a downloadable packaged extension",
+                "Built the read-only parallel-agent sandbox with real provider-backed sessions and production capacity controls",
+                "Redesigned the landing page, documentation, onboarding, composer, navigation, mobile layouts, and accessibility behavior",
+                "Added production headers, caching, lazy-load recovery, browser automation tests, and installed-extension tests"
+              ]
+            },
+            {
+              name: "AI / Technical Innovation",
+              tasks: [
+                "Combined structured EPM context, RAG, LCM snapshots, spreadsheet analysis, and fine-tuned model research into one product architecture",
+                "Added Together AI provider and fine-tuning workflows while retaining local and OpenAI-compatible model paths",
+                "Designed role-based parallel analysis for metadata, rules, validation, safety, integration, performance, testing, documentation, and final review",
+                "Bound agent outputs to observed workbook, tenant, and browser context instead of allowing unsupported claims"
+              ]
+            }
+          ],
+
+          technicalWork: [
+            "FastAPI, React, TypeScript, PostgreSQL, Docker, Fly.io, Google OAuth, and Together AI integration",
+            "Chrome Manifest V3 extension architecture with service workers, content scripts, optional permissions, and secure origin policy",
+            "Oracle JET, ADF, nested iframe, Shadow DOM, virtual-grid, and canvas browser adapters",
+            "Excel workbook inspection for formulas, VBA, names, tables, pivots, charts, connections, and redacted AI context",
+            "GL and chart-of-accounts hierarchy parsing, metadata CSV rendering, tenant reconciliation, and versioned context merges",
+            "Oracle HSP-aligned schema design and incremental LCM snapshot synchronization",
+            "Oracle EPM form XML rendering, validation, preview, copy, edit, and deployment",
+            "EPM Automate, Data Integration, MCP routing, business-rule actions, and substitution-variable actions",
+            "Owner-scoped asynchronous agent sessions with lifecycle controls, bounded concurrency, TTL cleanup, and isolated failures",
+            "Playwright, Chromium, Vitest, Pytest, accessibility audits, installed-extension E2E, and CI workflows"
+          ],
+
+          deliverables: [
+            "Hosted multi-user EPM Wizard application",
+            "GL and chart-of-accounts spreadsheet integration",
+            "Oracle HSP-aligned incremental snapshot synchronization",
+            "Form builder with copy, edit, validation, and one-click EPM deployment",
+            "EPM Wizard Chrome extension version 0.6.0",
+            "Packaged epm-wizard-extension-0.6.0.zip",
+            "Excel and VBA context pipeline for the browser agent",
+            "Read-only multi-agent sandbox with live role-based activity and handoff export",
+            "Playwright and Chromium web and installed-extension test environments",
+            "Production landing page, documentation, privacy disclosure, store listing, and deployment guides"
+          ],
+
+          metrics: {
+            backendTests: 595,
+            frontendTests: 126,
+            extensionTests: 30,
+            browserE2E: 16,
+            extensionVersion: "0.6.0",
+            agentRoles: 12
+          },
+
+          managerSummary: "During Week 9, Rohan transformed EPM Wizard into a production-oriented Oracle EPM platform spanning a hosted multi-user chat workspace, GL and chart-of-accounts spreadsheet integration, HSP-aligned snapshot synchronization, form deployment, and a secure Chrome browser agent. He added workbook and VBA context, Oracle-specific browser adapters, OAuth and EPM connection flows, and a real read-only multi-agent sandbox with owner-scoped lifecycle and capacity controls. He also deployed the stack with PostgreSQL, Google OAuth, Together AI, and CI/CD, while redesigning the product experience and documentation. The final validated snapshot passed 595 backend tests, 126 frontend tests, 30 extension tests, and 16 browser end-to-end tests.",
+
+          reflection: "Week 9 was the point where the EPM assistant stopped feeling like a collection of experiments and became a real product. The GL and chart-of-accounts workflow connected spreadsheet data to Oracle metadata in a controlled, auditable way, while the HSP snapshot sync and form deployment work brought the platform closer to actual implementation needs. Building the Chrome extension forced me to think carefully about browser permissions, OAuth, workbook privacy, Oracle-specific interfaces, and what a supervised AI agent should be allowed to do. Finishing with a hosted multi-user architecture, a role-based agent sandbox, and broad automated testing showed me how much engineering sits between a strong prototype and a product that people can trust.",
           assets: []
         }
       ]
